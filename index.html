@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ààyè</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        .paper {
+            display: flex;
+            /*
+            padding: 5mm;
+            border: 0.1mm solid lightgray;
+            */
+        }
+
+        .a4 {
+            width: 210mm;
+            height: 297mm;
+        }
+
+        .card {
+            border: 0.1mm solid black;
+            padding: 3mm;
+            position: relative;
+        }
+
+        .mini-euro {
+            width: 45mm;
+            height: 68mm;
+        }
+
+        .type {
+            position: absolute;
+            bottom: 0;
+            left: calc(50% - 7.5mm);
+            border: 1px solid black;
+            width: 15mm;
+            height: 15mm;
+        }
+
+        .pv {
+            position: absolute;
+            bottom: 0;
+            left: calc(0%);
+            border: 1px solid black;
+            width: 15mm;
+            height: 15mm;
+        }  
+        .effect {
+            position: absolute;
+            bottom: 0;
+            right: calc(0%);
+            border: 1px solid black;
+            width: 15mm;
+            height: 30mm;
+        }
+        .extra {
+            position: absolute;
+            top: calc(50% - 7.5mm);
+            left: calc(50% - 20mm);
+            border: 1px solid black;
+            width: 40mm;
+            height: 15mm;
+        }          
+        .cost {
+            position: absolute;
+            top: calc(0%);
+            right: calc(0%);
+            border: 1px solid black;
+            width: 15mm;
+            height: 15mm;
+        }          
+    </style>
+</head>
+
+<body>
+    <h1>Ààyè</h1>
+    <div class="paper a4"></div>
+    <script type="module">
+        const CARDS = [
+            { type: "moon", cost: 1, effect: ["sn"], pv: 2, extra: "Initial", qty: 16 },
+            { type: "sun", cost: 1, effect: ["sn", "sn",], pv: 2, extra: "Initial", qty: 8 },
+
+        ];
+        const eCards = document.querySelector(".paper");
+
+        for (let card in CARDS) {
+            eCards.appendChild(createCard(CARDS[card]));
+        }
+        document.body.appendChild(eCards);
+        function createCard(card) {
+
+            const eCard = document.createElement("div");
+            eCard.classList.add("card");
+            eCard.classList.add("mini-euro");
+            eCard.classList.add(card.type);
+            let eType = document.createElement("div");
+            eType.classList.add("type");
+            eType.classList.add("type");
+            eType.innerText = card.type;
+            eCard.appendChild(eType);
+            let eCost = document.createElement("div");
+            eCost.classList.add("cost");
+            eCost.innerText = card.cost;
+            eCard.appendChild(eCost);
+            let eExtra = document.createElement("div");
+            eExtra.classList.add("extra");
+            eExtra.classList.add("initial");
+            eExtra.innerText = card.extra;
+            eCard.appendChild(eExtra);
+            let ePV = document.createElement("div");
+            ePV.classList.add("pv");
+            ePV.innerText = card.pv;
+            eCard.appendChild(ePV);
+            let eEffect = document.createElement("div");
+            eEffect.classList.add("effect");
+            eEffect.innerText = card.effect;
+            eCard.appendChild(eEffect);
+            return eCard;
+        }
+    </script>
+</body>
+
+</html>
