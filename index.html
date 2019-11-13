@@ -6,30 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ààyè</title>
     <style>
-        html,
-        body {
+        * {
             margin: 0;
             padding: 0;
             border: 0;
         }
 
         .paper {
-            display: flex;
             /*
+            display: flex;
             padding: 5mm;
             border: 0.1mm solid lightgray;
             */
         }
 
         .a4 {
+            /*
             width: 210mm;
             height: 297mm;
+            */
         }
 
         .card {
             border: 0.1mm solid black;
             padding: 3mm;
             position: relative;
+            display: inline-block;
         }
 
         .mini-euro {
@@ -53,15 +55,17 @@
             border: 1px solid black;
             width: 15mm;
             height: 15mm;
-        }  
+        }
+
         .effect {
             position: absolute;
             bottom: 0;
             right: calc(0%);
             border: 1px solid black;
             width: 15mm;
-            height: 30mm;
+            height: 20mm;
         }
+
         .extra {
             position: absolute;
             top: calc(50% - 7.5mm);
@@ -69,7 +73,8 @@
             border: 1px solid black;
             width: 40mm;
             height: 15mm;
-        }          
+        }
+
         .cost {
             position: absolute;
             top: calc(0%);
@@ -77,7 +82,14 @@
             border: 1px solid black;
             width: 15mm;
             height: 15mm;
-        }          
+        }
+
+        .item {
+            border: 1px solid black;
+            width: 5mm;
+            height: 5mm;
+            display: inline-block;
+        }
     </style>
 </head>
 
@@ -86,14 +98,52 @@
     <div class="paper a4"></div>
     <script type="module">
         const CARDS = [
-            { type: "moon", cost: 1, effect: ["sn"], pv: 2, extra: "Initial", qty: 16 },
-            { type: "sun", cost: 1, effect: ["sn", "sn",], pv: 2, extra: "Initial", qty: 8 },
+            { type: "moon", cost: 1, effect: ["sn"], pv: 2, extra: ["initial"], qty: 16 },
+            { type: "sun", cost: 1, effect: ["sn", "sn",], pv: 2, extra: ["initial"], qty: 8 },
+            { type: "sun", cost: 1, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 2, extra: ["initial"], qty: 4 },
+            { type: "sun", cost: 1, effect: ["sp"], pv: 2, extra: ["initial"], qty: 4 },
+
+            { type: "moon", cost: 1, effect: ["sn"], pv: 2, extra: [""], qty: 2 },
+            { type: "sun", cost: 1, effect: ["sn"], pv: 2, extra: [""], qty: 2 },
+
+            { type: "moon", cost: 3, effect: ["sn"], pv: 4, extra: [""], qty: 2 },
+            { type: "sun", cost: 3, effect: ["sn"], pv: 4, extra: [""], qty: 2 },
+
+            { type: "moon", cost: 1, effect: ["ms"], pv: 2, extra: [""], qty: 2 },
+            { type: "sun", cost: 1, effect: ["ms"], pv: 2, extra: [""], qty: 2 },
+
+            { type: "moon", cost: 3, effect: ["sa"], pv: 4, extra: [""], qty: 2 },
+            { type: "sun", cost: 3, effect: ["sa"], pv: 4, extra: [""], qty: 2 },
+
+            { type: "moon", cost: 1, effect: ["sp"], pv: 2, extra: [""], qty: 4 },
+            { type: "sun", cost: 1, effect: ["sp"], pv: 2, extra: [""], qty: 4 },
+
+            { type: "moon", cost: 3, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 4, extra: [""], qty: 2 },
+            { type: "sun", cost: 3, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 4, extra: [""], qty: 2 },
+
+            { type: "moon", cost: 3, effect: ["xca", "to", "sj", "sj", "sj"], pv: 4, extra: [""], qty: 3 },
+            { type: "sun", cost: 3, effect: ["xca", "to", "sj", "sj", "sj"], pv: 4, extra: [""], qty: 3 },
+
+            { type: "moon", cost: 5, effect: ["sn", "sn", "sn"], pv: "?", extra: ["1", "per", "sn"], qty: 1 },
+            { type: "sun", cost: 5, effect: ["sp", "sp"], pv: "?", extra: ["1", "per", "sp"], qty: 1 },
+            { type: "moon", cost: 5, effect: ["so"], pv: "?", extra: ["1", "per", "so"], qty: 1 },
+            { type: "sun", cost: 5, effect: ["mca"], pv: "?", extra: ["1", "per", "pair"], qty: 1 },
+            { type: "moon", cost: 5, effect: ["mca"], pv: "?", extra: ["1", "per", "equi"], qty: 1 },
+            
+            { type: "moon", cost: 5, effect: ["ms"], pv: "?", extra: ["1", "per", "sh"], qty: 1 },
+            { type: "sun", cost: 5, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 16, extra: ["-1", "per", "sj"], qty: 1 },
+            { type: "moon", cost: 5, effect: ["xca", "to", "sj", "sj", "sj"], pv: 16, extra: ["-1", "per", "ca"], qty: 1 },
+            { type: "sun", cost: 5, effect: ["merge", "pile", "pile"], pv: 6, extra: ["2x", "ca", "on", "gpile"], qty: 1 },
+            { type: "moon", cost: 5, effect: ["split", "pile"], pv: 6, extra: ["2x", "ca", "on", "spile"], qty: 1 },
 
         ];
         const eCards = document.querySelector(".paper");
 
-        for (let card in CARDS) {
-            eCards.appendChild(createCard(CARDS[card]));
+        for (let c in CARDS) {
+            const card = CARDS[c];
+            for (let i = 0; i < 1/*card.qty*/; i++) {
+                eCards.appendChild(createCard(card));
+            }
         }
         document.body.appendChild(eCards);
         function createCard(card) {
@@ -113,8 +163,13 @@
             eCard.appendChild(eCost);
             let eExtra = document.createElement("div");
             eExtra.classList.add("extra");
-            eExtra.classList.add("initial");
-            eExtra.innerText = card.extra;
+            for (const key in card.extra) {
+                const item = card.extra[key];
+                let eItem = document.createElement("div");
+                eItem.classList.add("item");
+                eItem.innerText = item;
+                eExtra.appendChild(eItem);
+            }
             eCard.appendChild(eExtra);
             let ePV = document.createElement("div");
             ePV.classList.add("pv");
@@ -122,7 +177,13 @@
             eCard.appendChild(ePV);
             let eEffect = document.createElement("div");
             eEffect.classList.add("effect");
-            eEffect.innerText = card.effect;
+            for (const key in card.effect) {
+                const item = card.effect[key];
+                let eItem = document.createElement("div");
+                eItem.classList.add("item");
+                eItem.innerText = item;
+                eEffect.appendChild(eItem);
+            }
             eCard.appendChild(eEffect);
             return eCard;
         }
