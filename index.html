@@ -10,12 +10,20 @@
             margin: 0;
             padding: 0;
             border: 0;
-        }
 
+        }
         .paper {
+            margin: auto;
+            font-size: 0;
+            text-align: center;
+            height: 100%;
+            display: block;
             /*
-            display: flex;
             padding: 5mm;
+            display: table;
+            align-content: center;
+            flex-wrap: wrap;
+            display: flex;
             border: 0.1mm solid lightgray;
             */
         }
@@ -33,16 +41,16 @@
         }
 
         .card {
-            border: 0.1mm solid black;
+            box-sizing: border-box;
+            border: 0.01mm solid rgba(90, 49, 20, 0.3);
             padding: 3mm;
             position: relative;
-            float: left;
-            clear: none;
             background-color: tan;
-            color: #5a3114;
+            color: rgb(90, 49, 20);
             font-family: "p22", sans-serif;
             text-shadow: 0.2mm 0.2mm wheat;
-
+            page-break-inside: avoid;
+            display: inline-block;
         }
 
         .mask1,
@@ -52,8 +60,8 @@
             background-image:
                 url("assets/mask1.png"),
                 url("assets/fundo.png");
-            background-size: 30mm, cover;
-            background-position: 50% 10%, center center;
+            background-size: 26mm, cover;
+            background-position: 50% 22%, center center;
             background-repeat: no-repeat, no-repeat;
         }
 
@@ -61,23 +69,24 @@
             background-image:
                 url("assets/mask2.png"),
                 url("assets/fundo.png");
-            background-size: 44mm, cover;
+            background-size: 39mm, cover;
+            background-position: 50% 15%, center center;
         }
 
         .mask3 {
             background-image:
                 url("assets/mask3.png"),
                 url("assets/fundo.png");
-            background-size: 40mm, cover;
-            background-position: 50% 19%, center center;
+            background-size: 32mm, cover;
+            background-position: 50% 15%, center center;
         }
 
         .mask4 {
             background-image:
                 url("assets/mask4.png"),
                 url("assets/fundo.png");
-            background-size: 35mm, cover;
-            background-position: 50% 7%, center center;
+            background-size: 31mm, cover;
+            background-position: 50% 15%, center center;
         }
 
         .mini-euro {
@@ -88,9 +97,21 @@
         .type {
             position: absolute;
             bottom: 3mm;
-            left: calc(50% - 7.5mm);
-            width: 15mm;
-            height: 15mm;
+            width: 39mm;
+            height: 12mm;
+        }
+
+        .moon .moon,
+        .sun .sun {
+            font-size: 0;
+            background-image: url("assets/moon.png");
+            background-size: contain;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+        }
+
+        .sun .sun {
+            background-image: url("assets/sun.png");
         }
 
         .pv {
@@ -98,12 +119,12 @@
             position: absolute;
             bottom: 3mm;
             left: 3mm;
-            width: 12mm;
-            height: 12mm;
+            width: 10mm;
+            height: 10mm;
             text-align: center;
             vertical-align: middle;
-            line-height: 12mm;
-            font-size: 6.5mm;
+            line-height: 10mm;
+            font-size: 6.2mm;
             background-image: url("assets/aaye.png");
             background-size: contain;
         }
@@ -136,33 +157,22 @@
 
         .cost {
             position: absolute;
-            top: 3mm;
+            top: 0.5mm;
             right: 3mm;
-            width: 10mm;
-            height: 12mm;
-            font-size: 10mm;
+            width: 8.3mm;
+            height: 10mm;
+            font-size: 7mm;
             line-height: 8mm;
             background-repeat: no-repeat;
-            background-size: 2mm;
             text-align: left;
             vertical-align: top;
-            color: #5a3114;
-            background-image: url("assets/sj.png");
+            background-image: url(assets/sj.png);
             background-size: 5mm;
-            background-repeat: none;
-            background-position: 95% 95%;
+            background-position: 100% 95%;
         }
 
 
-        .initial {
-            font-size: 0;
-            background-image: url("assets/initial.png");
-            background-size: contain;
-            width: 14mm;
-            background-repeat: no-repeat;
-            background-position: center;
 
-        }
 
         .item {
             width: 6mm;
@@ -242,30 +252,6 @@
         }
 
 
-        .moon .moon {
-            text-align: center;
-            line-height: 15mm;
-            font-size: 0;
-            background-image: url("assets/moon.png");
-            background-size: 8mm;
-            background-position: 50% 45%;
-            background-repeat: no-repeat;
-        }
-
-        .sun .sun {
-            text-align: center;
-            line-height: 15mm;
-            font-size: 0;
-            background-image: url("assets/sun.png");
-            background-size: 14mm;
-            background-position: 50% 45%;
-            background-repeat: no-repeat;
-        }
-
-
-
-
-
 
         .merge,
         .split,
@@ -277,7 +263,7 @@
             background-image: url("assets/merge2.png");
             background-size: contain;
             background-repeat: no-repeat;
-            width: 15mm;
+            width: 12mm;
             height: 10mm;
         }
 
@@ -369,11 +355,45 @@
             width: 19mm;
             background-image: url("assets/equi2.png");
         }
+
+        .initial {
+            font-size: 0;
+            background-image: url(assets/initial.png);
+            background-size: contain;
+            width: 100%;
+            margin-left: 0;
+            margin-top: -43mm;
+            background-size: 9mm;
+            background-repeat: no-repeat;
+            background-position: left;
+            align-self: flex-start;
+        }
+
+        @media print {
+            html{
+                margin: auto;
+                -webkit-print-color-adjust: exact;
+            }
+
+            h1 {
+                display: none;
+            }
+            .card {
+                page-break-inside: avoid;
+            }
+
+        }
+
+        @page {
+            size: A4 portrait;
+            margin: 3mm;
+            -webkit-print-color-adjust: exact;
+        }
     </style>
 </head>
 
 <body>
-    <h1>Ààyè</h1>
+    <h1>Ààyè<br/ > CC-BY-ND-NC André Teruya &amp; Igor Knop</h1>
     <div class="paper a4"></div>
     <script type="module">
         const CARDS = [
@@ -396,12 +416,18 @@
 
             { mask: 1, type: "moon", cost: 1, effect: ["sp"], pv: 2, extra: [], qty: 4 },
             { mask: 2, type: "sun", cost: 1, effect: ["sp"], pv: 2, extra: [], qty: 4 },
+            { mask: 1, type: "moon", cost: 1, effect: ["ca"], pv: 2, extra: [], qty: 2 },
+            { mask: 2, type: "sun", cost: 1, effect: ["ca"], pv: 2, extra: [], qty: 4 },
 
             { mask: 1, type: "moon", cost: 3, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 4, extra: [], qty: 2 },
             { mask: 2, type: "sun", cost: 3, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 4, extra: [], qty: 2 },
 
             { mask: 1, type: "moon", cost: 3, effect: ["xca", "to", "sj", "sj", "sj"], pv: 4, extra: [], qty: 3 },
             { mask: 2, type: "sun", cost: 3, effect: ["xca", "to", "sj", "sj", "sj"], pv: 4, extra: [], qty: 3 },
+
+            { mask: 1, type: "moon", cost: 5, effect: ["so"], pv: 6, extra: [], qty: 3 },
+            { mask: 2, type: "sun", cost: 5, effect: ["so"], pv: 6, extra: [], qty: 3 },
+
 
             { mask: 4, type: "moon", cost: 5, effect: ["sn", "sn", "sn"], pv: "?", extra: ["p1", "per", "sn"], qty: 1 },
             { mask: 3, type: "sun", cost: 5, effect: ["sp", "sp"], pv: "?", extra: ["p1", "per", "sp"], qty: 1 },
@@ -420,7 +446,7 @@
         const stats = {}
         for (let c in CARDS) {
             const card = CARDS[c];
-            for (let i = 0; i < 1/*card.qty*/; i++) {
+            for (let i = 0; i < card.qty; i++) {
                 eCards.appendChild(createCard(card));
             }
         }
