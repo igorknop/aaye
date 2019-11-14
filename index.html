@@ -31,6 +31,7 @@
             font-family: "p22";
             src: url("./assets/P22Vincent.ttf") format("truetype");
         }
+
         .card {
             border: 0.1mm solid black;
             padding: 3mm;
@@ -45,7 +46,9 @@
             background-position: 50% 10%, center center;
             background-repeat: no-repeat, no-repeat;
             color: #5a3114;
-            font-family: "p22",sans-serif;
+            font-family: "p22", sans-serif;
+            text-shadow: 0.2mm 0.2mm wheat;
+
         }
 
         .mini-euro {
@@ -121,6 +124,7 @@
             height: 5mm;
             display: inline-block;
         }
+
         .initial {
             font-size: 0;
             background-image: url("assets/initial.png");
@@ -130,17 +134,20 @@
             background-position: center;
 
         }
+
         .sn {
             font-size: 0;
             background-image: url("assets/sn.png");
             background-size: contain;
         }
 
-        .sp, .xsp{
+        .sp,
+        .xsp {
             font-size: 0;
             background-image: url("assets/sp.png");
             background-size: contain;
         }
+
         .so {
             font-size: 0;
             background-color: black;
@@ -154,28 +161,26 @@
         }
 
         .to {
-            border-block-color: transparent;
-            visibility: hidden;
+            font-size: 0;
+            background-image: url("assets/down.png");
+            background-size: contain;
+            background-repeat: no-repeat;
         }
 
-        .to::before {
-            margin: 1.8mm;
-            content: "↓";
-            font-size: 1em;
-            visibility: visible;
-        }
 
+        .ca,
         .xca {
-            border-block-color: transparent;
-            visibility: hidden;
+            font-size: 0;
+            background-image: url("assets/ca.png");
+            background-size: contain;
+            background-repeat: no-repeat;
         }
 
-        .xca::before {
-            margin: 1.8mm;
-            content: "█";
-            font-size: 1em;
-            visibility: visible;
-            color: #5a3114;
+        .pile {
+            font-size: 0;
+            background-image: url("assets/pile.png");
+            background-size: contain;
+            background-repeat: no-repeat;
         }
 
         .per {
@@ -212,6 +217,7 @@
             background-position: 50% 45%;
             background-repeat: no-repeat;
         }
+
         .sun .sun {
             text-align: center;
             line-height: 15mm;
@@ -221,7 +227,7 @@
             background-position: 50% 45%;
             background-repeat: no-repeat;
         }
-        
+
 
         .ms {
             font-size: 0;
@@ -242,11 +248,13 @@
             width: 7mm;
             height: 7mm;
         }
+
         .p1::before {
             font-size: 5mm;
             content: "1";
             visibility: visible;
-        }    
+        }
+
         .pn1 {
             font-size: 0;
             content: "1";
@@ -256,11 +264,31 @@
             width: 7mm;
             height: 7mm;
         }
+
         .pn1::before {
             font-size: 5mm;
             content: "-1";
             visibility: visible;
-        } 
+        }
+
+        .pair {
+
+            font-size: 0;
+            width: 15mm;
+            background-size: 15mm;
+            background-image: url("assets/pair2.png");
+            background-repeat: no-repeat;
+        }
+
+        .equi {
+
+            font-size: 0;
+            width: 15mm;
+            background-size: 15mm;
+            background-image: url("assets/equi2.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
     </style>
 </head>
 
@@ -303,7 +331,7 @@
 
             { type: "moon", cost: 5, effect: ["ms"], pv: "?", extra: ["p1", "per", "sh"], qty: 1 },
             { type: "sun", cost: 5, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 16, extra: ["pn1", "per", "sj"], qty: 1 },
-            { type: "moon", cost: 5, effect: ["xca", "to", "sj", "sj", "sj"], pv: 16, extra: ["-1", "per", "ca"], qty: 1 },
+            { type: "moon", cost: 5, effect: ["xca", "to", "sj", "sj", "sj"], pv: 16, extra: ["pn1", "per", "ca"], qty: 1 },
             { type: "sun", cost: 5, effect: ["merge", "pile", "pile"], pv: 6, extra: ["2x", "ca", "on", "gpile"], qty: 1 },
             { type: "moon", cost: 5, effect: ["split", "pile"], pv: 6, extra: ["2x", "ca", "on", "spile"], qty: 1 },
 
