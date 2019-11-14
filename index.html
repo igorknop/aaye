@@ -33,6 +33,7 @@
             position: relative;
             float: left;
             clear: none;
+            background-color: tan;
         }
 
         .mini-euro {
@@ -62,23 +63,26 @@
             position: absolute;
             bottom: 0;
             right: calc(0%);
-            border: 1px solid black;
-            width: 15mm;
-            height: 20mm;
+            width: 10mm;
+            height: 30mm;
             text-align: right;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
         }
 
         .extra {
             position: absolute;
             bottom: calc(40% - 7.5mm);
             left: calc(50% - 20mm);
-            border: 1px solid black;
             width: 40mm;
             height: 8mm;
             display: flex;
             align-items: center;
             justify-content: center;
-
+            align-content: center;
         }
 
         .cost {
@@ -96,6 +100,150 @@
             height: 5mm;
             display: inline-block;
         }
+
+        .sn {
+            font-size: 0;
+            background-color: white;
+        }
+
+        .sp,
+        .so {
+            font-size: 0;
+            background-color: black;
+            border-color: white;
+        }
+
+        .xsp,
+        .xso {
+            font-size: 0;
+            background-color: black;
+            border-color: red;
+        }
+
+        .xsp::before {
+            content: "x";
+        }
+
+        .sj {
+            font-size: 0;
+            background-color: gray;
+        }
+
+        .to {
+            border-block-color: transparent;
+            visibility: hidden;
+        }
+
+        .to::before {
+            margin: 1.8mm;
+            content: "↓";
+            font-size: 1em;
+            visibility: visible;
+        }
+
+        .xca {
+            border-block-color: transparent;
+            visibility: hidden;
+        }
+
+        .xca::before {
+            margin: 1.8mm;
+            content: "█";
+            font-size: 1em;
+            visibility: visible;
+            color: brown;
+        }
+
+        .per {
+            border-block-color: transparent;
+            visibility: hidden;
+        }
+
+        .per::before {
+            margin: 1.8mm;
+            content: ":";
+            font-size: 1em;
+            visibility: visible;
+            color: brown;
+        }
+
+        .pv {
+            text-align: center;
+            line-height: 15mm;
+            font-size: 8mm;
+            color: brown;
+            border-radius: 50%;
+            border: 1mm brown solid;
+        }
+
+        .cost {
+            text-align: center;
+            line-height: 15mm;
+            font-size: 8mm;
+            color: brown;
+        }
+
+        .sun .sun {
+            text-align: center;
+            line-height: 15mm;
+            font-size: 8mm;
+            color: brown;
+            visibility: hidden;
+        }
+
+        .sun .sun::before {
+            margin: 0em;
+            content: "☀";
+            font-size: 2em;
+            visibility: visible;
+            color: black;
+        }
+
+        .moon .moon {
+            text-align: center;
+            line-height: 15mm;
+            font-size: 8mm;
+            visibility: hidden;
+        }
+
+        .moon .moon::before {
+            margin: 0.15em;
+            content: "☾";
+            font-size: 2em;
+            visibility: visible;
+            color: white;
+        }
+        .initial {
+            font-size: 0;
+            background-color: chartreuse;
+        }
+        .ms {
+            font-size: 0;
+            background-color: blue;
+        }
+        .mca {
+            font-size: 0;
+            background-color: darkblue;
+        }
+        
+        .p1 {
+            font-size: 0;
+            content: 1;
+            text-align: center;
+            color: brown;
+            border-radius: 50%;
+            border: 0.5mm brown solid;
+        }
+        .pn1 {
+            font-size: 0;
+            content: 1;
+            text-align: center;
+            color: brown;
+            border-radius: 50%;
+            border: 0.5mm brown solid;
+        }
+
+
     </style>
 </head>
 
@@ -130,14 +278,14 @@
             { type: "moon", cost: 3, effect: ["xca", "to", "sj", "sj", "sj"], pv: 4, extra: [], qty: 3 },
             { type: "sun", cost: 3, effect: ["xca", "to", "sj", "sj", "sj"], pv: 4, extra: [], qty: 3 },
 
-            { type: "moon", cost: 5, effect: ["sn", "sn", "sn"], pv: "?", extra: ["1", "per", "sn"], qty: 1 },
-            { type: "sun", cost: 5, effect: ["sp", "sp"], pv: "?", extra: ["1", "per", "sp"], qty: 1 },
-            { type: "moon", cost: 5, effect: ["so"], pv: "?", extra: ["1", "per", "so"], qty: 1 },
-            { type: "sun", cost: 5, effect: ["mca"], pv: "?", extra: ["1", "per", "pair"], qty: 1 },
-            { type: "moon", cost: 5, effect: ["mca"], pv: "?", extra: ["1", "per", "equi"], qty: 1 },
+            { type: "moon", cost: 5, effect: ["sn", "sn", "sn"], pv: "?", extra: ["p1", "per", "sn"], qty: 1 },
+            { type: "sun", cost: 5, effect: ["sp", "sp"], pv: "?", extra: ["p1", "per", "sp"], qty: 1 },
+            { type: "moon", cost: 5, effect: ["so"], pv: "?", extra: ["p1", "per", "so"], qty: 1 },
+            { type: "sun", cost: 5, effect: ["mca"], pv: "?", extra: ["p1", "per", "pair"], qty: 1 },
+            { type: "moon", cost: 5, effect: ["mca"], pv: "?", extra: ["p1", "per", "equi"], qty: 1 },
 
-            { type: "moon", cost: 5, effect: ["ms"], pv: "?", extra: ["1", "per", "sh"], qty: 1 },
-            { type: "sun", cost: 5, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 16, extra: ["-1", "per", "sj"], qty: 1 },
+            { type: "moon", cost: 5, effect: ["ms"], pv: "?", extra: ["p1", "per", "sh"], qty: 1 },
+            { type: "sun", cost: 5, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 16, extra: ["pn1", "per", "sj"], qty: 1 },
             { type: "moon", cost: 5, effect: ["xca", "to", "sj", "sj", "sj"], pv: 16, extra: ["-1", "per", "ca"], qty: 1 },
             { type: "sun", cost: 5, effect: ["merge", "pile", "pile"], pv: 6, extra: ["2x", "ca", "on", "gpile"], qty: 1 },
             { type: "moon", cost: 5, effect: ["split", "pile"], pv: 6, extra: ["2x", "ca", "on", "spile"], qty: 1 },
@@ -160,6 +308,7 @@
             eCard.classList.add(card.type);
             let eType = document.createElement("div");
             eType.classList.add("type");
+            eType.classList.add(card.type);
             eType.innerText = card.type;
             eCard.appendChild(eType);
             stats[`${card.type}`] = stats[`${card.type}`] ? stats[`${card.type}`] + 1 : 1;
@@ -174,6 +323,7 @@
                 const item = card.extra[key];
                 let eItem = document.createElement("div");
                 eItem.classList.add("item");
+                eItem.classList.add(item);
                 eItem.innerText = item;
                 eExtra.appendChild(eItem);
             }
@@ -190,6 +340,7 @@
                 const item = card.effect[key];
                 let eItem = document.createElement("div");
                 eItem.classList.add("item");
+                eItem.classList.add(item);
                 eItem.innerText = item;
                 eEffect.appendChild(eItem);
             }
