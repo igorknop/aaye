@@ -34,6 +34,13 @@
             float: left;
             clear: none;
             background-color: tan;
+            background-image:
+                url("assets/mask1.png"),
+                url("assets/fundo.png");
+            background-size: 25mm, cover;
+            background-position: 50% 10%, center center;
+            background-repeat: no-repeat, no-repeat;
+            color: #5a3114;
         }
 
         .mini-euro {
@@ -45,7 +52,6 @@
             position: absolute;
             bottom: 0;
             left: calc(50% - 7.5mm);
-            border: 1px solid black;
             width: 15mm;
             height: 15mm;
         }
@@ -75,7 +81,7 @@
 
         .extra {
             position: absolute;
-            bottom: calc(40% - 7.5mm);
+            bottom: calc(40% - 12mm);
             left: calc(50% - 20mm);
             width: 40mm;
             height: 8mm;
@@ -89,13 +95,23 @@
             position: absolute;
             top: calc(0%);
             right: calc(0%);
-            border: 1px solid black;
             width: 15mm;
             height: 15mm;
+            padding: -2mm;
+            background-repeat: no-repeat;
+            background-size: 2mm;
+            text-align: center;
+            line-height: 15mm;
+            font-size: 8mm;
+            color: #5a3114;
+            background-image: url("assets/sj.png");
+            background-size: 5mm;
+            background-repeat: none;
+            background-position: 95% 95%;
         }
 
         .item {
-            border: 1px solid black;
+            /*border: 1px solid black;*/
             width: 5mm;
             height: 5mm;
             display: inline-block;
@@ -103,7 +119,8 @@
 
         .sn {
             font-size: 0;
-            background-color: white;
+            background-image: url("assets/sn.png");
+            background-size: contain;
         }
 
         .sp,
@@ -126,7 +143,8 @@
 
         .sj {
             font-size: 0;
-            background-color: gray;
+            background-image: url("assets/sj.png");
+            background-size: contain;
         }
 
         .to {
@@ -151,7 +169,7 @@
             content: "█";
             font-size: 1em;
             visibility: visible;
-            color: brown;
+            color: #5a3114;
         }
 
         .per {
@@ -164,24 +182,21 @@
             content: ":";
             font-size: 1em;
             visibility: visible;
-            color: brown;
+            color: #5a3114;
+            ;
         }
 
         .pv {
+            border: none;
             text-align: center;
             line-height: 15mm;
             font-size: 8mm;
-            color: brown;
-            border-radius: 50%;
-            border: 1mm brown solid;
+            color: #5a3114;
+            background-image: url("assets/aaye.png");
+            background-size: contain;
         }
 
-        .cost {
-            text-align: center;
-            line-height: 15mm;
-            font-size: 8mm;
-            color: brown;
-        }
+
 
         .sun .sun {
             text-align: center;
@@ -202,30 +217,28 @@
         .moon .moon {
             text-align: center;
             line-height: 15mm;
-            font-size: 8mm;
-            visibility: hidden;
+            font-size: 0;
+            background-image: url("assets/moon.png");
+            background-size: 8mm;
+            background-position: 50% 45%;
+            background-repeat: no-repeat;
         }
 
-        .moon .moon::before {
-            margin: 0.15em;
-            content: "☾";
-            font-size: 2em;
-            visibility: visible;
-            color: white;
-        }
         .initial {
             font-size: 0;
             background-color: chartreuse;
         }
+
         .ms {
             font-size: 0;
             background-color: blue;
         }
+
         .mca {
             font-size: 0;
             background-color: darkblue;
         }
-        
+
         .p1 {
             font-size: 0;
             content: 1;
@@ -234,6 +247,7 @@
             border-radius: 50%;
             border: 0.5mm brown solid;
         }
+
         .pn1 {
             font-size: 0;
             content: 1;
@@ -242,8 +256,6 @@
             border-radius: 50%;
             border: 0.5mm brown solid;
         }
-
-
     </style>
 </head>
 
