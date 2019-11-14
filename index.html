@@ -83,11 +83,11 @@
             position: absolute;
             bottom: 3mm;
             right: 3mm;
-            width: 10mm;
+            width: 12mm;
             height: 30mm;
             text-align: right;
             display: flex;
-            align-items: center;
+            align-items: flex-end;
             flex-direction: column;
             justify-content: flex-end;
             align-content: end;
@@ -124,12 +124,6 @@
             background-position: 95% 95%;
         }
 
-        .item {
-            /*border: 1px solid black;*/
-            width: 5mm;
-            height: 5mm;
-            display: inline-block;
-        }
 
         .initial {
             font-size: 0;
@@ -141,66 +135,77 @@
 
         }
 
-        .sn {
+        .item {
+            /*border: 1px solid black;*/
+            width: 6mm;
+            height: 6mm;
+            display: inline-block;
             font-size: 0;
-            background-image: url("assets/sn.png");
             background-size: contain;
+            background-repeat: no-repeat;
+        }
+        .sn {
+            background-image: url("assets/sn.png");
         }
 
         .sp,
         .xsp {
-            font-size: 0;
             background-image: url("assets/sp.png");
-            background-size: contain;
         }
 
         .so,
         .xso {
-            font-size: 0;
             background-image: url("assets/so3.png");
-            background-size: contain;
         }
 
         .sj {
-            font-size: 0;
             background-image: url("assets/sj.png");
-            background-size: contain;
         }
 
         .to {
-            font-size: 0;
             background-image: url("assets/down.png");
-            background-size: contain;
-            background-repeat: no-repeat;
         }
-
-
         .ca,
         .xca {
             width: 7mm;
-            height: 6mm;
+            height: 7mm;
             font-size: 0;
             background-image: url("assets/ca.png");
             background-size: contain;
             background-repeat: no-repeat;
         }
 
-        .pile {
+        .pile, .gpile, .spile, .extra .ca {
             font-size: 0;
             background-image: url("assets/pile.png");
             background-size: contain;
             background-repeat: no-repeat;
+            height: 7mm;
+            width: 10mm;
         }
 
+        .gpile {
+            background-image: url("assets/gpile.png");
+        }
+
+        .spile {
+            background-image: url("assets/spile.png");
+        }
+        .extra .ca{
+            background-image: url("assets/ca.png");
+        }
         .per {
             border-block-color: transparent;
             visibility: hidden;
+            width: 6mm;
+            height: 8mm;
         }
 
         .per::before {
             margin: 1.8mm;
             content: ":";
-            font-size: 1em;
+            font-size: 8mm;
+            line-height: 8mm;
             visibility: visible;
             color: #5a3114;
             ;
@@ -228,42 +233,34 @@
         }
 
 
-        .ms {
-            border: none;
-            font-size: 0;
-            background-image: url("assets/ms.png");
-            background-size: contain;
-            background-repeat: no-repeat;
-            width: 10mm;
-        }
 
-        .sa {
-            border: none;
-            font-size: 0;
-            background-image: url("assets/sa3.png");
-            background-size: contain;
-            background-repeat: no-repeat;
-            width: 10mm;
-        }
 
-        .mca {
+
+
+        .merge, .split, .mca, .ms, .sa {
             border: none;
             font-size: 0;
-            background-image: url("assets/mca.png");
+            background-image: url("assets/merge2.png");
             background-size: contain;
             background-repeat: no-repeat;
             width: 15mm;
-            height: 8mm;
+            height: 10mm;
+        }
+        .mca {
+            background-image: url("assets/mca.png");
+        }
+        .ms {
+            background-image: url("assets/ms.png");
+        }
+        .split {
+            background-image: url("assets/split.png");
         }
 
-        .sh {
-            border: none;
-            font-size: 0;
-            background-image: url("assets/sh.png");
-            background-size: contain;
-            background-repeat: no-repeat;
-            width: 14mm;
+        .sa {
+            background-image: url("assets/sa3.png");
         }
+
+
 
         .p1 {
             font-size: 0;
@@ -278,6 +275,22 @@
         .p1::before {
             font-size: 5mm;
             content: "1";
+            visibility: visible;
+        }
+
+        .p2 {
+            font-size: 0;
+            content: "2";
+            text-align: center;
+            background-image: url("assets/aaye.png");
+            background-size: contain;
+            width: 7mm;
+            height: 7mm;
+        }
+
+        .p2::before {
+            font-size: 5mm;
+            content: "2";
             visibility: visible;
         }
 
@@ -297,23 +310,23 @@
             visibility: visible;
         }
 
-        .pair {
+        .pair, .equi, .sh {
             font-size: 0;
             width: 15mm;
-            height: 6mm;
+            height: 7mm;
             background-size: contain;
             background-image: url("assets/pair2.png");
             background-repeat: no-repeat;
         }
-
+        .sh {
+            background-image: url("assets/sh.png");
+            width: 18mm;
+            height: 7mm;
+        }
         .equi {
-            font-size: 0;
-            width: 15mm;
-            height: 6mm;
-            background-size: 15mm;
+            background-size: 19mm;
+            width: 19mm;
             background-image: url("assets/equi2.png");
-            background-size: contain;
-            background-repeat: no-repeat;
         }
     </style>
 </head>
@@ -358,8 +371,8 @@
             { type: "moon", cost: 5, effect: ["ms"], pv: "?", extra: ["p1", "per", "sh"], qty: 1 },
             { type: "sun", cost: 5, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 16, extra: ["pn1", "per", "sj"], qty: 1 },
             { type: "moon", cost: 5, effect: ["xca", "to", "sj", "sj", "sj"], pv: 16, extra: ["pn1", "per", "ca"], qty: 1 },
-            { type: "sun", cost: 5, effect: ["merge", "pile", "pile"], pv: 6, extra: ["2x", "ca", "on", "gpile"], qty: 1 },
-            { type: "moon", cost: 5, effect: ["split", "pile"], pv: 6, extra: ["2x", "ca", "on", "spile"], qty: 1 },
+            { type: "sun", cost: 5, effect: ["merge"], pv: 6, extra: ["p2", "per", "gpile"], qty: 1 },
+            { type: "moon", cost: 5, effect: ["split"], pv: 6, extra: ["p2", "per", "spile"], qty: 1 },
 
         ];
         const eCards = document.querySelector(".paper");
