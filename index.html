@@ -39,16 +39,45 @@
             float: left;
             clear: none;
             background-color: tan;
-            background-image:
-                url("assets/mask1.png"),
-                url("assets/fundo.png");
-            background-size: 25mm, cover;
-            background-position: 50% 10%, center center;
-            background-repeat: no-repeat, no-repeat;
             color: #5a3114;
             font-family: "p22", sans-serif;
             text-shadow: 0.2mm 0.2mm wheat;
 
+        }
+
+        .mask1,
+        .mask2,
+        .mask3,
+        .mask4 {
+            background-image:
+                url("assets/mask1.png"),
+                url("assets/fundo.png");
+            background-size: 30mm, cover;
+            background-position: 50% 10%, center center;
+            background-repeat: no-repeat, no-repeat;
+        }
+
+        .mask2 {
+            background-image:
+                url("assets/mask2.png"),
+                url("assets/fundo.png");
+            background-size: 44mm, cover;
+        }
+
+        .mask3 {
+            background-image:
+                url("assets/mask3.png"),
+                url("assets/fundo.png");
+            background-size: 40mm, cover;
+            background-position: 50% 19%, center center;
+        }
+
+        .mask4 {
+            background-image:
+                url("assets/mask4.png"),
+                url("assets/fundo.png");
+            background-size: 35mm, cover;
+            background-position: 50% 7%, center center;
         }
 
         .mini-euro {
@@ -136,7 +165,6 @@
         }
 
         .item {
-            /*border: 1px solid black;*/
             width: 6mm;
             height: 6mm;
             display: inline-block;
@@ -144,6 +172,7 @@
             background-size: contain;
             background-repeat: no-repeat;
         }
+
         .sn {
             background-image: url("assets/sn.png");
         }
@@ -165,17 +194,18 @@
         .to {
             background-image: url("assets/down.png");
         }
+
         .ca,
         .xca {
             width: 7mm;
             height: 7mm;
-            font-size: 0;
             background-image: url("assets/ca.png");
-            background-size: contain;
-            background-repeat: no-repeat;
         }
 
-        .pile, .gpile, .spile, .extra .ca {
+        .pile,
+        .gpile,
+        .spile,
+        .extra .ca {
             font-size: 0;
             background-image: url("assets/pile.png");
             background-size: contain;
@@ -191,9 +221,11 @@
         .spile {
             background-image: url("assets/spile.png");
         }
-        .extra .ca{
+
+        .extra .ca {
             background-image: url("assets/ca.png");
         }
+
         .per {
             border-block-color: transparent;
             visibility: hidden;
@@ -207,8 +239,6 @@
             font-size: 8mm;
             line-height: 8mm;
             visibility: visible;
-            color: #5a3114;
-            ;
         }
 
 
@@ -237,7 +267,11 @@
 
 
 
-        .merge, .split, .mca, .ms, .sa {
+        .merge,
+        .split,
+        .mca,
+        .ms,
+        .sa {
             border: none;
             font-size: 0;
             background-image: url("assets/merge2.png");
@@ -246,12 +280,15 @@
             width: 15mm;
             height: 10mm;
         }
+
         .mca {
             background-image: url("assets/mca.png");
         }
+
         .ms {
             background-image: url("assets/ms.png");
         }
+
         .split {
             background-image: url("assets/split.png");
         }
@@ -310,7 +347,9 @@
             visibility: visible;
         }
 
-        .pair, .equi, .sh {
+        .pair,
+        .equi,
+        .sh {
             font-size: 0;
             width: 15mm;
             height: 7mm;
@@ -318,11 +357,13 @@
             background-image: url("assets/pair2.png");
             background-repeat: no-repeat;
         }
+
         .sh {
             background-image: url("assets/sh.png");
             width: 18mm;
             height: 7mm;
         }
+
         .equi {
             background-size: 19mm;
             width: 19mm;
@@ -336,43 +377,43 @@
     <div class="paper a4"></div>
     <script type="module">
         const CARDS = [
-            { type: "moon", cost: 1, effect: ["sn"], pv: 2, extra: ["initial"], qty: 16 },
-            { type: "sun", cost: 1, effect: ["sn", "sn",], pv: 2, extra: ["initial"], qty: 8 },
-            { type: "sun", cost: 1, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 2, extra: ["initial"], qty: 4 },
-            { type: "sun", cost: 1, effect: ["sp"], pv: 2, extra: ["initial"], qty: 4 },
+            { mask: 1, type: "moon", cost: 1, effect: ["sn"], pv: 2, extra: ["initial"], qty: 16 },
+            { mask: 2, type: "sun", cost: 1, effect: ["sn", "sn",], pv: 2, extra: ["initial"], qty: 8 },
+            { mask: 2, type: "sun", cost: 1, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 2, extra: ["initial"], qty: 4 },
+            { mask: 2, type: "sun", cost: 1, effect: ["sp"], pv: 2, extra: ["initial"], qty: 4 },
 
-            { type: "moon", cost: 1, effect: ["sn"], pv: 2, extra: [], qty: 2 },
-            { type: "sun", cost: 1, effect: ["sn"], pv: 2, extra: [], qty: 2 },
+            { mask: 1, type: "moon", cost: 1, effect: ["sn"], pv: 2, extra: [], qty: 2 },
+            { mask: 2, type: "sun", cost: 1, effect: ["sn"], pv: 2, extra: [], qty: 2 },
 
-            { type: "moon", cost: 3, effect: ["sn"], pv: 4, extra: [], qty: 2 },
-            { type: "sun", cost: 3, effect: ["sn"], pv: 4, extra: [], qty: 2 },
+            { mask: 1, type: "moon", cost: 3, effect: ["sn"], pv: 4, extra: [], qty: 2 },
+            { mask: 2, type: "sun", cost: 3, effect: ["sn"], pv: 4, extra: [], qty: 2 },
 
-            { type: "moon", cost: 1, effect: ["ms"], pv: 2, extra: [], qty: 2 },
-            { type: "sun", cost: 1, effect: ["ms"], pv: 2, extra: [], qty: 2 },
+            { mask: 1, type: "moon", cost: 1, effect: ["ms"], pv: 2, extra: [], qty: 2 },
+            { mask: 2, type: "sun", cost: 1, effect: ["ms"], pv: 2, extra: [], qty: 2 },
 
-            { type: "moon", cost: 3, effect: ["sa"], pv: 4, extra: [], qty: 2 },
-            { type: "sun", cost: 3, effect: ["sa"], pv: 4, extra: [], qty: 2 },
+            { mask: 1, type: "moon", cost: 3, effect: ["sa"], pv: 4, extra: [], qty: 2 },
+            { mask: 2, type: "sun", cost: 3, effect: ["sa"], pv: 4, extra: [], qty: 2 },
 
-            { type: "moon", cost: 1, effect: ["sp"], pv: 2, extra: [], qty: 4 },
-            { type: "sun", cost: 1, effect: ["sp"], pv: 2, extra: [], qty: 4 },
+            { mask: 1, type: "moon", cost: 1, effect: ["sp"], pv: 2, extra: [], qty: 4 },
+            { mask: 2, type: "sun", cost: 1, effect: ["sp"], pv: 2, extra: [], qty: 4 },
 
-            { type: "moon", cost: 3, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 4, extra: [], qty: 2 },
-            { type: "sun", cost: 3, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 4, extra: [], qty: 2 },
+            { mask: 1, type: "moon", cost: 3, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 4, extra: [], qty: 2 },
+            { mask: 2, type: "sun", cost: 3, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 4, extra: [], qty: 2 },
 
-            { type: "moon", cost: 3, effect: ["xca", "to", "sj", "sj", "sj"], pv: 4, extra: [], qty: 3 },
-            { type: "sun", cost: 3, effect: ["xca", "to", "sj", "sj", "sj"], pv: 4, extra: [], qty: 3 },
+            { mask: 1, type: "moon", cost: 3, effect: ["xca", "to", "sj", "sj", "sj"], pv: 4, extra: [], qty: 3 },
+            { mask: 2, type: "sun", cost: 3, effect: ["xca", "to", "sj", "sj", "sj"], pv: 4, extra: [], qty: 3 },
 
-            { type: "moon", cost: 5, effect: ["sn", "sn", "sn"], pv: "?", extra: ["p1", "per", "sn"], qty: 1 },
-            { type: "sun", cost: 5, effect: ["sp", "sp"], pv: "?", extra: ["p1", "per", "sp"], qty: 1 },
-            { type: "moon", cost: 5, effect: ["so"], pv: "?", extra: ["p1", "per", "so"], qty: 1 },
-            { type: "sun", cost: 5, effect: ["mca"], pv: "?", extra: ["p1", "per", "pair"], qty: 1 },
-            { type: "moon", cost: 5, effect: ["mca"], pv: "?", extra: ["p1", "per", "equi"], qty: 1 },
+            { mask: 4, type: "moon", cost: 5, effect: ["sn", "sn", "sn"], pv: "?", extra: ["p1", "per", "sn"], qty: 1 },
+            { mask: 3, type: "sun", cost: 5, effect: ["sp", "sp"], pv: "?", extra: ["p1", "per", "sp"], qty: 1 },
+            { mask: 4, type: "moon", cost: 5, effect: ["so"], pv: "?", extra: ["p1", "per", "so"], qty: 1 },
+            { mask: 3, type: "sun", cost: 5, effect: ["mca"], pv: "?", extra: ["p1", "per", "pair"], qty: 1 },
+            { mask: 4, type: "moon", cost: 5, effect: ["mca"], pv: "?", extra: ["p1", "per", "equi"], qty: 1 },
 
-            { type: "moon", cost: 5, effect: ["ms"], pv: "?", extra: ["p1", "per", "sh"], qty: 1 },
-            { type: "sun", cost: 5, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 16, extra: ["pn1", "per", "sj"], qty: 1 },
-            { type: "moon", cost: 5, effect: ["xca", "to", "sj", "sj", "sj"], pv: 16, extra: ["pn1", "per", "ca"], qty: 1 },
-            { type: "sun", cost: 5, effect: ["merge"], pv: 6, extra: ["p2", "per", "gpile"], qty: 1 },
-            { type: "moon", cost: 5, effect: ["split"], pv: 6, extra: ["p2", "per", "spile"], qty: 1 },
+            { mask: 4, type: "moon", cost: 5, effect: ["ms"], pv: "?", extra: ["p1", "per", "sh"], qty: 1 },
+            { mask: 3, type: "sun", cost: 5, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 16, extra: ["pn1", "per", "sj"], qty: 1 },
+            { mask: 4, type: "moon", cost: 5, effect: ["xca", "to", "sj", "sj", "sj"], pv: 16, extra: ["pn1", "per", "ca"], qty: 1 },
+            { mask: 3, type: "sun", cost: 5, effect: ["merge"], pv: 6, extra: ["p2", "per", "gpile"], qty: 1 },
+            { mask: 4, type: "moon", cost: 5, effect: ["split"], pv: 6, extra: ["p2", "per", "spile"], qty: 1 },
 
         ];
         const eCards = document.querySelector(".paper");
@@ -390,6 +431,7 @@
             eCard.classList.add("card");
             eCard.classList.add("mini-euro");
             eCard.classList.add(card.type);
+            eCard.classList.add(`mask${card.mask}`);
             let eType = document.createElement("div");
             eType.classList.add("type");
             eType.classList.add(card.type);
