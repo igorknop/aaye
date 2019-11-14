@@ -58,32 +58,38 @@
 
         .type {
             position: absolute;
-            bottom: 0;
+            bottom: 3mm;
             left: calc(50% - 7.5mm);
             width: 15mm;
             height: 15mm;
         }
 
         .pv {
+            border: none;
             position: absolute;
-            bottom: 0;
-            left: calc(0%);
-            border: 1px solid black;
-            width: 15mm;
-            height: 15mm;
+            bottom: 3mm;
+            left: 3mm;
+            width: 12mm;
+            height: 12mm;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 12mm;
+            font-size: 6.5mm;
+            background-image: url("assets/aaye.png");
+            background-size: contain;
         }
 
         .effect {
             position: absolute;
-            bottom: 0;
-            right: calc(0%);
+            bottom: 3mm;
+            right: 3mm;
             width: 10mm;
             height: 30mm;
             text-align: right;
             display: flex;
             align-items: center;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-end;
             align-content: end;
         }
 
@@ -101,16 +107,16 @@
 
         .cost {
             position: absolute;
-            top: calc(0%);
-            right: calc(0%);
-            width: 15mm;
-            height: 15mm;
-            padding: -2mm;
+            top: 3mm;
+            right: 3mm;
+            width: 10mm;
+            height: 12mm;
+            font-size: 10mm;
+            line-height: 8mm;
             background-repeat: no-repeat;
             background-size: 2mm;
-            text-align: center;
-            line-height: 15mm;
-            font-size: 8mm;
+            text-align: left;
+            vertical-align: top;
             color: #5a3114;
             background-image: url("assets/sj.png");
             background-size: 5mm;
@@ -148,10 +154,11 @@
             background-size: contain;
         }
 
-        .so {
+        .so,
+        .xso {
             font-size: 0;
-            background-color: black;
-            border-color: white;
+            background-image: url("assets/so3.png");
+            background-size: contain;
         }
 
         .sj {
@@ -170,6 +177,8 @@
 
         .ca,
         .xca {
+            width: 7mm;
+            height: 6mm;
             font-size: 0;
             background-image: url("assets/ca.png");
             background-size: contain;
@@ -197,16 +206,6 @@
             ;
         }
 
-        .pv {
-            border: none;
-            text-align: center;
-            line-height: 15mm;
-            font-size: 8mm;
-            background-image: url("assets/aaye.png");
-            background-size: contain;
-        }
-
-
 
         .moon .moon {
             text-align: center;
@@ -230,13 +229,40 @@
 
 
         .ms {
+            border: none;
             font-size: 0;
-            background-color: blue;
+            background-image: url("assets/ms.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 10mm;
+        }
+
+        .sa {
+            border: none;
+            font-size: 0;
+            background-image: url("assets/sa3.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 10mm;
         }
 
         .mca {
+            border: none;
             font-size: 0;
-            background-color: darkblue;
+            background-image: url("assets/mca.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 15mm;
+            height: 8mm;
+        }
+
+        .sh {
+            border: none;
+            font-size: 0;
+            background-image: url("assets/sh.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 14mm;
         }
 
         .p1 {
@@ -272,18 +298,18 @@
         }
 
         .pair {
-
             font-size: 0;
             width: 15mm;
-            background-size: 15mm;
+            height: 6mm;
+            background-size: contain;
             background-image: url("assets/pair2.png");
             background-repeat: no-repeat;
         }
 
         .equi {
-
             font-size: 0;
             width: 15mm;
+            height: 6mm;
             background-size: 15mm;
             background-image: url("assets/equi2.png");
             background-size: contain;
