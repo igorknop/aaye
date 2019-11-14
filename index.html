@@ -27,6 +27,10 @@
             */
         }
 
+        @font-face {
+            font-family: "p22";
+            src: url("./assets/P22Vincent.ttf") format("truetype");
+        }
         .card {
             border: 0.1mm solid black;
             padding: 3mm;
@@ -41,6 +45,7 @@
             background-position: 50% 10%, center center;
             background-repeat: no-repeat, no-repeat;
             color: #5a3114;
+            font-family: "p22",sans-serif;
         }
 
         .mini-euro {
@@ -76,7 +81,7 @@
             align-items: center;
             flex-direction: column;
             justify-content: center;
-            align-content: center;
+            align-content: end;
         }
 
         .extra {
@@ -116,29 +121,30 @@
             height: 5mm;
             display: inline-block;
         }
+        .initial {
+            font-size: 0;
+            background-image: url("assets/initial.png");
+            background-size: contain;
+            width: 14mm;
+            background-repeat: no-repeat;
+            background-position: center;
 
+        }
         .sn {
             font-size: 0;
             background-image: url("assets/sn.png");
             background-size: contain;
         }
 
-        .sp,
+        .sp, .xsp{
+            font-size: 0;
+            background-image: url("assets/sp.png");
+            background-size: contain;
+        }
         .so {
             font-size: 0;
             background-color: black;
             border-color: white;
-        }
-
-        .xsp,
-        .xso {
-            font-size: 0;
-            background-color: black;
-            border-color: red;
-        }
-
-        .xsp::before {
-            content: "x";
         }
 
         .sj {
@@ -198,22 +204,6 @@
 
 
 
-        .sun .sun {
-            text-align: center;
-            line-height: 15mm;
-            font-size: 8mm;
-            color: brown;
-            visibility: hidden;
-        }
-
-        .sun .sun::before {
-            margin: 0em;
-            content: "☀";
-            font-size: 2em;
-            visibility: visible;
-            color: black;
-        }
-
         .moon .moon {
             text-align: center;
             line-height: 15mm;
@@ -223,11 +213,16 @@
             background-position: 50% 45%;
             background-repeat: no-repeat;
         }
-
-        .initial {
+        .sun .sun {
+            text-align: center;
+            line-height: 15mm;
             font-size: 0;
-            background-color: chartreuse;
+            background-image: url("assets/sun.png");
+            background-size: 14mm;
+            background-position: 50% 45%;
+            background-repeat: no-repeat;
         }
+        
 
         .ms {
             font-size: 0;
