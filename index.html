@@ -12,6 +12,7 @@
             border: 0;
 
         }
+
         .paper {
             margin: auto;
             font-size: 0;
@@ -194,7 +195,7 @@
 
         .so,
         .xso {
-            background-image: url("assets/so3.png");
+            background-image: url("assets/so5.png");
         }
 
         .sj {
@@ -370,7 +371,7 @@
         }
 
         @media print {
-            html{
+            html {
                 margin: auto;
                 -webkit-print-color-adjust: exact;
             }
@@ -378,6 +379,7 @@
             h1 {
                 display: none;
             }
+
             .card {
                 page-break-inside: avoid;
             }
@@ -393,7 +395,7 @@
 </head>
 
 <body>
-    <h1>Ààyè<br/ > CC-BY-ND-NC André Teruya &amp; Igor Knop</h1>
+    <h1>Ààyè<br /> CC-BY-ND-NC André Teruya &amp; Igor Knop</h1>
     <div class="paper a4"></div>
     <script type="module">
         const CARDS = [
@@ -438,9 +440,14 @@
             { mask: 4, type: "moon", cost: 5, effect: ["ms"], pv: "?", extra: ["p1", "per", "sh"], qty: 1 },
             { mask: 3, type: "sun", cost: 5, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 16, extra: ["pn1", "per", "sj"], qty: 1 },
             { mask: 4, type: "moon", cost: 5, effect: ["xca", "to", "sj", "sj", "sj"], pv: 16, extra: ["pn1", "per", "ca"], qty: 1 },
-            { mask: 3, type: "sun", cost: 5, effect: ["merge"], pv: 6, extra: ["p2", "per", "gpile"], qty: 1 },
-            { mask: 4, type: "moon", cost: 5, effect: ["split"], pv: 6, extra: ["p2", "per", "spile"], qty: 1 },
-
+            { mask: 3, type: "sun", cost: 5, effect: ["merge"], pv: "?", extra: ["p2", "per", "gpile"], qty: 1 },
+            { mask: 4, type: "moon", cost: 5, effect: ["split"], pv: "?", extra: ["p2", "per", "spile"], qty: 1 },
+            { mask: 4, type: "moon", cost: 5, effect: ["ca"], pv: "?", extra: ["p1", "per", "moon"], qty: 1 },
+            { mask: 3, type: "sun", cost: 5, effect: ["ca"], pv: "?", extra: ["p1", "per", "sun"], qty: 1 },
+            { mask: 4, type: "moon", cost: 5, effect: ["sn"], pv: "?", extra: ["p2", "per", "sp", "sn"], qty: 1 },
+            { mask: 3, type: "sun", cost: 5, effect: ["sp"], pv: "?", extra: ["p2", "per", "sp", "sn"], qty: 1 },
+            { mask: 4, type: "moon", cost: 5, effect: ["sn"], pv: "?", extra: ["p2", "per", "so", "sn"], qty: 1 },
+            { mask: 3, type: "sun", cost: 5, effect: ["so"], pv: "?", extra: ["p2", "per", "so", "sn"], qty: 1 },
         ];
         const eCards = document.querySelector(".paper");
         const stats = {}
@@ -453,6 +460,7 @@
         console.table(stats);
         document.body.appendChild(eCards);
         function createCard(card) {
+            stats[`cards`] = stats[`cards`] ? stats[`cards`] + 1 : 1;
             const eCard = document.createElement("div");
             eCard.classList.add("card");
             eCard.classList.add("mini-euro");
@@ -478,6 +486,9 @@
                 eItem.classList.add(item);
                 eItem.innerText = item;
                 eExtra.appendChild(eItem);
+                if (item === "initial") { 
+                    stats[`${item}`] = stats[`${item}`] ? stats[`${item}`] + 1 : 1; 
+                }
             }
             eCard.appendChild(eExtra);
             let ePV = document.createElement("div");
