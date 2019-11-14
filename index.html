@@ -197,7 +197,6 @@
             text-align: center;
             line-height: 15mm;
             font-size: 8mm;
-            color: #5a3114;
             background-image: url("assets/aaye.png");
             background-size: contain;
         }
@@ -236,21 +235,32 @@
 
         .p1 {
             font-size: 0;
-            content: 1;
+            content: "1";
             text-align: center;
-            color: brown;
-            border-radius: 50%;
-            border: 0.5mm brown solid;
+            background-image: url("assets/aaye.png");
+            background-size: contain;
+            width: 7mm;
+            height: 7mm;
         }
-
+        .p1::before {
+            font-size: 5mm;
+            content: "1";
+            visibility: visible;
+        }    
         .pn1 {
             font-size: 0;
-            content: 1;
+            content: "1";
             text-align: center;
-            color: brown;
-            border-radius: 50%;
-            border: 0.5mm brown solid;
+            background-image: url("assets/aaye.png");
+            background-size: contain;
+            width: 7mm;
+            height: 7mm;
         }
+        .pn1::before {
+            font-size: 5mm;
+            content: "-1";
+            visibility: visible;
+        } 
     </style>
 </head>
 
