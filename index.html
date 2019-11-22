@@ -400,74 +400,106 @@
     <h1>Ààyè<br /> CC-BY-ND-NC André Teruya &amp; Igor Knop</h1>
     <div class="paper a4"></div>
     <script type="module">
+        const MAX_PLAYERS = 4;
         const CARDS = [
-            { mask: 3, type: "moon", cost: 5, effect: ["sn", "sn"], pv: "?", extra: ["p1", "per", "sn"], qty: 1 },
+            { mask: 3, type: "moon", cost: 5, effect: ["sn", "sn"], pv: "0", extra: ["p1", "per", "sn"], qty: 1 },
+            { mask: 1, type: "moon", cost: 0, effect: ["sn"], pv: 0, extra: ["initial"], qty: 3 },
+            { mask: 2, type: "sun", cost: 0, effect: ["sp"], pv: 0, extra: ["initial"], qty: 2 },
+            { mask: 2, type: "sun", cost: 0, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 0, extra: ["initial"], qty: 1 },
+
+            { mask: 4, type: "sun", cost: 5, effect: ["sp", "sp"], pv: "0", extra: ["p1", "per", "sp"], qty: 1 },
+            { mask: 1, type: "moon", cost: 0, effect: ["sn"], pv: 0, extra: ["initial"], qty: 3 },
+            { mask: 2, type: "sun", cost: 0, effect: ["sp"], pv: 0, extra: ["initial"], qty: 2 },
+            { mask: 2, type: "sun", cost: 0, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 0, extra: ["initial"], qty: 1 },
+            
+            { mask: 3, type: "moon", cost: 5, effect: ["sn", "sn"], pv: "0", extra: ["p1", "per", "sn"], qty: 1 },
+            { mask: 1, type: "moon", cost: 0, effect: ["sn"], pv: 0, extra: ["initial"], qty: 3 },
+            { mask: 2, type: "sun", cost: 0, effect: ["sp"], pv: 0, extra: ["initial"], qty: 2 },
+            { mask: 2, type: "sun", cost: 0, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 0, extra: ["initial"], qty: 1 },
+            
+            { mask: 4, type: "sun", cost: 5, effect: ["sp", "sp"], pv: "0", extra: ["p1", "per", "sp"], qty: 1 },
+            { mask: 1, type: "moon", cost: 0, effect: ["sn"], pv: 0, extra: ["initial"], qty: 3 },
+            { mask: 2, type: "sun", cost: 0, effect: ["sp"], pv: 0, extra: ["initial"], qty: 2 },
+            { mask: 2, type: "sun", cost: 0, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 0, extra: ["initial"], qty: 1 },
+            
+            { mask: 3, type: "moon", cost: 5, effect: ["so"], pv: "0", extra: ["p1", "per", "so"], qty: 1 },
+            { mask: 2, type: "sun", cost: 3, effect: ["so"], pv: 4, extra: [], qty: 3 },
+            { mask: 1, type: "moon", cost: 3, effect: ["so"], pv: 4, extra: [], qty: 3 },
+            
+            { mask: 4, type: "sun", cost: 5, effect: ["xsj", "to", "sn", "sn", "sn"], pv: 16, extra: ["pn1", "per", "sj"], qty: 1 },
+            { mask: 1, type: "moon", cost: 3, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 4, extra: [], qty: 3 },
+            { mask: 2, type: "sun", cost: 3, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 4, extra: [], qty: 3 },
+            
+            { mask: 3, type: "sun", cost: 5, effect: ["merge"], pv: "0", extra: ["p2", "per", "gpile"], qty: 1 },
+            { mask: 1, type: "moon", cost: 3, effect: ["merge"], pv: 4, extra: [], qty: 3 },
+            { mask: 2, type: "sun", cost: 3, effect: ["merge"], pv: 4, extra: [], qty: 3 },
+            
+            { mask: 4, type: "moon", cost: 5, effect: ["split"], pv: "0", extra: ["p2", "per", "spile"], qty: 1 },
+            { mask: 1, type: "moon", cost: 3, effect: ["split"], pv: 4, extra: [], qty: 3 },
+            { mask: 2, type: "sun", cost: 3, effect: ["split"], pv: 4, extra: [], qty: 3 },
+            
+            { mask: 3, type: "sun", cost: 5, effect: ["mca"], pv: "0", extra: ["p1", "per", "pair"], qty: 1 },
+            { mask: 1, type: "moon", cost: 1, effect: ["mca"], pv: 3, extra: [], qty: 2},
+            { mask: 2, type: "sun", cost: 1, effect: ["mca"], pv: 3, extra: [], qty: 2 },
+            { mask: 1, type: "moon", cost: 1, effect: ["sn","mca"], pv: 2, extra: [], qty: 1},
+            { mask: 2, type: "sun", cost: 1, effect: ["sn","mca"], pv: 2, extra: [], qty: 1 },
+            
+            { mask: 3, type: "sun", cost: 5, effect: ["sn", "ca"], pv: "0", extra: ["p1", "per", "sun"], qty: 1 },
+            { mask: 4, type: "moon", cost: 5, effect: ["sn", "ca"], pv: "0", extra: ["p1", "per", "moon"], qty: 1 },
+            { mask: 4, type: "moon", cost: 5, effect: ["mca"], pv: "0", extra: ["p1", "per", "pair"], qty: 1 },
+            { mask: 1, type: "moon", cost: 1, effect: ["sn","ca"], pv: 2, extra: [], qty: 2 },
+            { mask: 2, type: "sun", cost: 1, effect: ["sn","ca"], pv: 2, extra: [], qty: 2 },
+            
+            /**/
+            { mask: 4, type: "moon", cost: 5, effect: ["ms"], pv: "0", extra: ["p2", "per", "sh"], qty: 1 },
+            { mask: 1, type: "moon", cost: 3, effect: ["sa"], pv: 1, extra: [], qty: 3 },
+            { mask: 2, type: "sun", cost: 3, effect: ["sa"], pv: 1, extra: [], qty: 3 },
+            
+            { mask: 4, type: "moon", cost: 5, effect: ["sn","sp"], pv: "0", extra: ["p2", "per", "sp", "sn"], qty: 1 },
+            { mask: 1, type: "moon", cost: 1, effect: ["ms"], pv: 3, extra: [], qty: 3 },
+            { mask: 2, type: "sun", cost: 1, effect: ["ms"], pv: 3, extra: [], qty: 3 },
+        ];
+        const CARDSO = [
+            { mask: 4, type: "moon", cost: 5, effect: ["mca"], pv: "0", extra: ["p1", "per", "equi"], qty: 1 },
             { mask: 1, type: "moon", cost: 3, effect: ["sn", "sn"], pv: 4, extra: [], qty: 1 },
             { mask: 2, type: "sun", cost: 3, effect: ["sn", "sn"], pv: 4, extra: [], qty: 1 },
             { mask: 2, type: "sun", cost: 1, effect: ["sn"], pv: 2, extra: [], qty: 1 },
             { mask: 1, type: "moon", cost: 1, effect: ["sn"], pv: 2, extra: [], qty: 1 },
-            { mask: 1, type: "moon", cost: 0, effect: ["sn"], pv: 0, extra: ["initial"], qty: 4*4 },
 
-
-            { mask: 4, type: "sun", cost: 5, effect: ["sp", "sp"], pv: "?", extra: ["p1", "per", "sp"], qty: 1 },
+            
             { mask: 1, type: "moon", cost: 3, effect: ["sp", "sp"], pv: 4, extra: [], qty: 1 },
             { mask: 2, type: "sun", cost: 3, effect: ["sp", "sp"], pv: 4, extra: [], qty: 1 },
             { mask: 1, type: "moon", cost: 1, effect: ["sp"], pv: 2, extra: [], qty: 1 },
             { mask: 2, type: "sun", cost: 1, effect: ["sp"], pv: 2, extra: [], qty: 1 },
-            { mask: 2, type: "sun", cost: 0, effect: ["sp"], pv: 0, extra: ["initial"], qty: 4*1 },
             
             
-            { mask: 4, type: "sun", cost: 5, effect: ["xsj", "to", "sn", "sn", "sn"], pv: 16, extra: ["pn1", "per", "sj"], qty: 1 },
-            { mask: 1, type: "moon", cost: 3, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 4, extra: [], qty: 1 },
-            { mask: 2, type: "sun", cost: 3, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 4, extra: [], qty: 1 },
             { mask: 1, type: "moon", cost: 1, effect: ["xsp", "to", "sn", "sn"], pv: 2, extra: [], qty: 1 },
             { mask: 2, type: "sun", cost: 1, effect: ["xsp", "to", "sn", "sn"], pv: 2, extra: [], qty: 1 },
-            { mask: 2, type: "sun", cost: 0, effect: ["xsp", "to", "sn", "sn"], pv: 0, extra: ["initial"], qty: 4*2 },
-
-            { mask: 3, type: "moon", cost: 5, effect: ["so"], pv: "?", extra: ["p1", "per", "so"], qty: 1 },
-            { mask: 2, type: "sun", cost: 3, effect: ["so"], pv: 4, extra: [], qty: 1 },
-            { mask: 1, type: "moon", cost: 3, effect: ["so"], pv: 4, extra: [], qty: 1 },
+            
             { mask: 1, type: "moon", cost: 3, effect: ["xsp", "to", "so", "sn"], pv: 4, extra: [], qty: 1 },
             { mask: 2, type: "sun", cost: 3, effect: ["xsp", "to", "so", "sn"], pv: 4, extra: [], qty: 1 },
             { mask: 2, type: "sun", cost: 3, effect: ["xso", "to", "sn", "sn", "sn"], pv: 4, extra: [], qty: 1 },
 
-            { mask: 3, type: "sun", cost: 5, effect: ["merge"], pv: "?", extra: ["p2", "per", "gpile"], qty: 1 },
             { mask: 1, type: "moon", cost: 3, effect: ["sn", "ca"], pv: 4, extra: [], qty: 1 },
             { mask: 1, type: "moon", cost: 1, effect: ["ca"], pv: 2, extra: [], qty: 1 },
-            { mask: 1, type: "moon", cost: 3, effect: ["merge"], pv: 4, extra: [], qty: 1 },
-            { mask: 2, type: "sun", cost: 3, effect: ["merge"], pv: 4, extra: [], qty: 1 },
-            { mask: 2, type: "sun", cost: 0, effect: ["ca"], pv: 0, extra: ["initial"], qty: 4*1 },
-
-            { mask: 4, type: "moon", cost: 5, effect: ["split"], pv: "?", extra: ["p2", "per", "spile"], qty: 1 },
-            { mask: 4, type: "moon", cost: 5, effect: ["xca", "to", "sj", "sj", "sj"], pv: 16, extra: ["pn1", "per", "ca"], qty: 1 },
+            { mask: 2, type: "sun", cost: 0, effect: ["ca"], pv: 0, extra: ["initial"], qty: MAX_PLAYERS * 1 },
+            
             { mask: 1, type: "moon", cost: 3, effect: ["xca", "to", "sj", "sj", "sj"], pv: 4, extra: [], qty: 1 },
             { mask: 2, type: "sun", cost: 3, effect: ["xca", "to", "sj", "sj", "sj"], pv: 4, extra: [], qty: 1 },
             { mask: 1, type: "moon", cost: 1, effect: ["xca", "to", "sn", "sn", "sp"], pv: 2, extra: [], qty: 1 },
             { mask: 2, type: "sun", cost: 1, effect: ["xca", "to", "sn", "sn", "sp"], pv: 2, extra: [], qty: 1 },
-
-
-            { mask: 4, type: "moon", cost: 5, effect: ["mca"], pv: "?", extra: ["p1", "per", "equi"], qty: 1 },
-            { mask: 3, type: "sun", cost: 5, effect: ["mca"], pv: "?", extra: ["p1", "per", "pair"], qty: 1 },
-            { mask: 3, type: "sun", cost: 5, effect: ["sn", "ca"], pv: "?", extra: ["p1", "per", "sun"], qty: 1 },
-            { mask: 4, type: "moon", cost: 5, effect: ["sn", "ca"], pv: "?", extra: ["p1", "per", "moon"], qty: 1},
-            { mask: 3, type: "sun", cost:1, effect: ["mca"], pv: 3, extra: [], qty: 1 },
-            { mask: 4, type: "moon", cost: 1, effect: ["mca"], pv: 3, extra: [], qty: 1
-    },    
-            { mask: 3, type: "moon", cost: 5, effect: ["ms"], pv: "?", extra: ["p1", "per", "sh"], qty: 1 },
-            { mask: 2, type: "sun", cost: 5, effect: ["sa"], pv: 6, extra: [], qty: 1 },
-            { mask: 1, type: "moon", cost: 3, effect: ["sa"], pv: 4, extra: [], qty: 1 },
-            { mask: 2, type: "sun", cost: 3, effect: ["sa"], pv: 4, extra: [], qty: 1 },
-            { mask: 1, type: "moon", cost: 3, effect: ["sa"], pv: 4, extra: [], qty: 1 },
-            { mask: 2, type: "sun", cost: 3, effect: ["sa"], pv: 4, extra: [], qty: 1 },
             
-            { mask: 4, type: "moon", cost: 5, effect: ["sn"], pv: "?", extra: ["p2", "per", "sp", "sn"], qty: 1 },
-            { mask: 3, type: "sun", cost: 5, effect: ["sp"], pv: "?", extra: ["p2", "per", "sp", "sn"], qty: 1 },
-            { mask: 3, type: "sun", cost: 5, effect: ["so"], pv: "?", extra: ["p2", "per", "so", "sn"], qty: 1 },
-            { mask: 1, type: "moon", cost: 1, effect: ["ms"], pv: 3, extra: [], qty: 1 },
-            { mask: 2, type: "sun", cost: 1, effect: ["ms"], pv: 3, extra: [], qty: 1 },
+            { mask: 4, type: "moon", cost: 5, effect: ["xca", "to", "sj", "sj", "sj"], pv: 16, extra: ["pn1", "per", "ca"], qty: 1 },
+            { mask: 3, type: "sun", cost: 5, effect: ["sp"], pv: "0", extra: ["p2", "per", "sp", "sn"], qty: 1 },
+            { mask: 3, type: "sun", cost: 5, effect: ["so"], pv: "0", extra: ["p2", "per", "so", "sn"], qty: 1 },
+            
+            
+            { mask: 1, type: "moon", cost: 3, effect: ["sa"], pv: 4, extra: [], qty: 1 },
+            { mask: 2, type: "sun", cost: 3, effect: ["sa"], pv: 4, extra: [], qty: 1 },
+            { mask: 1, type: "moon", cost: 3, effect: ["sa"], pv: 4, extra: [], qty: 1 },
+            { mask: 2, type: "sun", cost: 3, effect: ["sa"], pv: 4, extra: [], qty: 1 },
 
-        ];
-        const CARDSO = [
+
 
 
         ];
@@ -501,10 +533,10 @@
             stats[`$${card.cost}`] = stats[`$${card.cost}`] ? stats[`$${card.cost}`] + 1 : 1;
             let eExtra = document.createElement("div");
             eExtra.classList.add("extra");
-            if(card.extra.length>0 && card.extra[0]!=="initial"){
+            if (card.extra.length > 0 && card.extra[0] !== "initial") {
                 stats[`extras`] = stats[`extras`] ? stats[`extras`] + 1 : 1;
-                
-            } 
+
+            }
             for (const key in card.extra) {
                 const item = card.extra[key];
                 let eItem = document.createElement("div");
