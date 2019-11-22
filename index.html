@@ -46,7 +46,7 @@
             border: 0.01mm solid rgba(90, 49, 20, 0.3);
             padding: 3mm;
             position: relative;
-            background-color: tan;
+            background-color: rgb(90, 49, 20);
             color: rgb(90, 49, 20);
             font-family: "p22", sans-serif;
             text-shadow: 0.2mm 0.2mm wheat;
@@ -107,6 +107,7 @@
             background-size: 17mm, cover;
             background-position: 50% 10%, center center;
         }
+
 
         .mini-euro {
             width: 45mm;
@@ -395,6 +396,13 @@
             align-self: flex-start;
         }
 
+        .mask3,
+        .mask4,
+        .mask5,
+        .mask6 {
+            border: 0.8mm dashed  rgba(212, 121, 1, 0.6);
+        }
+
         @media print {
             html {
                 margin: auto;
@@ -412,7 +420,7 @@
         }
 
         @page {
-            size: A4 portrait;
+            size: A3 portrait;
             margin: 3mm;
             -webkit-print-color-adjust: exact;
         }
