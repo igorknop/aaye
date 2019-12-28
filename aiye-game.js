@@ -1,5 +1,6 @@
 export const stats = {};
 
+
 export function createCard(card) {
     stats[`cards`] = stats[`cards`] ? stats[`cards`] + 1 : 1;
     const eCard = document.createElement("div");
@@ -53,5 +54,12 @@ export function createCard(card) {
         eEffect.appendChild(eItem);
     }
     eCard.appendChild(eEffect);
+
+    const eValue = document.createElement("div");
+    console.log(card.type, card.value);
+
+    eValue.classList.add("cardValue");
+    eValue.textContent = card.value;
+    eCard.appendChild(eValue);
     return eCard;
 }

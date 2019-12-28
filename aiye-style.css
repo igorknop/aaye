@@ -180,6 +180,22 @@
     background-position: 100% 95%;
 }
 
+.debugon .cardValue {
+    position: absolute;
+    top: 0.5mm;
+    left: 3mm;
+    width: 8.3mm;
+    height: 10mm;
+    font-size: 3mm;
+    line-height: 8mm;
+    background-repeat: no-repeat;
+    text-align: left;
+    vertical-align: top;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    font-weight: bolder;
+}
+
 .item {
     width: 6mm;
     height: 6mm;
