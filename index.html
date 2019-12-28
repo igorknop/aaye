@@ -113,16 +113,16 @@
                 url("assets/mask5.png"),
                 url("assets/frame2.png"),
                 url("assets/fundo.png");
-            background-size: 28mm, 100% 100%, cover;
+            background-size: 26mm, 100% 100%, cover;
             background-position: 50% 9%, center center;
         }
 
         .mask6 {
             background-image:
-                url(assets/mask6.png),
+                url("assets/mask6.png"),
                 url("assets/frame2.png"),
-                url(assets/fundo.png);
-            background-size: 17mm, 100% 100%, cover;
+                url("assets/fundo.png");
+            background-size: 15mm, 100% 100%, cover;
             background-position: 50% 10%, center center;
         }
 
@@ -184,9 +184,9 @@
 
         .extra {
             position: absolute;
-            bottom: calc(40% - 12mm);
-            left: calc(50% - 20mm);
-            width: 40mm;
+            bottom: calc(40% - 7mm);
+            left: calc(50% - 16mm);
+            width: 32mm;
             height: 8mm;
             display: flex;
             align-items: center;
@@ -335,8 +335,6 @@
             background-image: url("assets/sa3.png");
         }
 
-
-
         .p1 {
             font-size: 0;
             content: "1";
@@ -366,6 +364,31 @@
         .p2::before {
             font-size: 5mm;
             content: "2";
+            visibility: visible;
+        }
+
+        .p5, .p8, .p11 {
+            font-size: 0;
+            text-align: center;
+            background-image: url("assets/aaye.png");
+            background-size: contain;
+            width: 6mm;
+            height: 6mm;
+        }
+
+        .p5::before {
+            font-size: 4mm;
+            content: "5";
+            visibility: visible;
+        }
+        .p8::before {
+            font-size: 4mm;
+            content: "8";
+            visibility: visible;
+        }
+        .p11::before {
+            font-size: 4mm;
+            content: "11";
             visibility: visible;
         }
 
@@ -414,7 +437,7 @@
             background-size: contain;
             width: 100%;
             margin-left: 0;
-            margin-top: -43mm;
+            margin-top: -38mm;
             background-size: 9mm;
             background-repeat: no-repeat;
             background-position: left;
@@ -453,27 +476,27 @@
     <script type="module">
         const MAX_PLAYERS = 4;
         const CARDS = [
-            { mask: 3, type: "moon", cost: 5, effect: ["sn", "sn"], pv: "0", extra: [, "p1", "per", "sn"], qty: 1 },
+            { mask: 3, type: "moon", cost: 5, effect: ["sn", "sn"], pv: "0", extra: [, "p5","p8","p11", "per", "sn"], qty: 1 },
             { mask: 1, type: "moon", cost: 0, effect: ["sn"], pv: 0, extra: ["initial"], qty: 3 },
             { mask: 2, type: "sun", cost: 0, effect: ["sp"], pv: 0, extra: ["initial"], qty: 2 },
             { mask: 2, type: "sun", cost: 0, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 0, extra: ["initial"], qty: 1 },
 
-            { mask: 3, type: "moon", cost: 5, effect: ["sp", "sp"], pv: "0", extra: [, "p1", "per", "sp"], qty: 1 },
+            { mask: 3, type: "moon", cost: 5, effect: ["sp", "sp"], pv: "0", extra: [, "p5","p8","p11", "per", "sp"], qty: 1 },
             { mask: 1, type: "moon", cost: 0, effect: ["sn"], pv: 0, extra: ["initial"], qty: 3 },
             { mask: 2, type: "sun", cost: 0, effect: ["sp"], pv: 0, extra: ["initial"], qty: 2 },
             { mask: 2, type: "sun", cost: 0, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 0, extra: ["initial"], qty: 1 },
 
-            { mask: 4, type: "sun", cost: 5, effect: ["sn", "sn"], pv: "0", extra: [, "p1", "per", "sn"], qty: 1 },
+            { mask: 4, type: "sun", cost: 5, effect: ["sn", "sn"], pv: "0", extra: [, "p5","p8","p11", "per", "sn"], qty: 1 },
             { mask: 1, type: "moon", cost: 0, effect: ["sn"], pv: 0, extra: ["initial"], qty: 3 },
             { mask: 2, type: "sun", cost: 0, effect: ["sp"], pv: 0, extra: ["initial"], qty: 2 },
             { mask: 2, type: "sun", cost: 0, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 0, extra: ["initial"], qty: 1 },
 
-            { mask: 4, type: "sun", cost: 5, effect: ["sp", "sp"], pv: "0", extra: [, "p1", "per", "sp"], qty: 1 },
+            { mask: 4, type: "sun", cost: 5, effect: ["sp", "sp"], pv: "0", extra: [, "p5","p8","p11", "per", "sp"], qty: 1 },
             { mask: 1, type: "moon", cost: 0, effect: ["sn"], pv: 0, extra: ["initial"], qty: 3 },
             { mask: 2, type: "sun", cost: 0, effect: ["sp"], pv: 0, extra: ["initial"], qty: 2 },
             { mask: 2, type: "sun", cost: 0, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 0, extra: ["initial"], qty: 1 },
 
-            { mask: 4, type: "sun", cost: 5, effect: ["so","ss"], pv: "0", extra: [, "p2", "per", "sn", "sp"], qty: 1 },
+            { mask: 4, type: "sun", cost: 5, effect: ["so","ss"], pv: "0", extra: [, "p5","p8","p11", "per", "sn", "sp"], qty: 1 },
             { mask: 2, type: "sun", cost: 3, effect: ["so","sp"], pv: 4, extra: [], qty: 3 },
             { mask: 1, type: "moon", cost: 3, effect: ["so","sn"], pv: 4, extra: [], qty: 3 },
 
@@ -507,15 +530,15 @@
             { mask: 2, type: "sun", cost: 3, effect: ["ca", "sa"], pv: 4, extra: [], qty: 1 },
 
             /**/
-            { mask: 5, type: "moon", cost: 5, effect: ["ss","ms"], pv: "0", extra: [, "p2", "per", "sh"], qty: 1 },
+            { mask: 5, type: "moon", cost: 5, effect: ["ss","ms"], pv: "0", extra: [ "p5","p8","p11", "per", "sj"], qty: 1 },
             { mask: 1, type: "moon", cost: 3, effect: ["sa"], pv: 1, extra: [], qty: 3 },
             { mask: 2, type: "sun", cost: 3, effect: ["sa"], pv: 1, extra: [], qty: 3 },
 
-            { mask: 4, type: "moon", cost: 5, effect: ["ss","sp"], pv: "0", extra: [, "p2", "per", "sn", "sp"], qty: 1 },
+            { mask: 4, type: "moon", cost: 5, effect: ["ss","sp"], pv: "0", extra: [, "p5","p8","p11", "per", "sn", "sp"], qty: 1 },
             { mask: 1, type: "moon", cost: 1, effect: ["sn","ms"], pv: 3, extra: [], qty: 3 },
             { mask: 2, type: "sun", cost: 1, effect: ["sp","ms"], pv: 3, extra: [], qty: 3 },
 
-            { mask: 5, type: "sun", cost: 5, effect: ["so", "ss"], pv: "0", extra: [, "p2", "per", "so", "ss"], qty: 1 },
+            { mask: 5, type: "sun", cost: 5, effect: ["so", "ss"], pv: "0", extra: [, "p5","p8","p11", "per", "so", "ss"], qty: 1 },
             { mask: 5, type: "moon", cost: 5, effect: ["so", "ss"], pv: "0", extra: [, "p1", "per", "so"], qty: 1 },
             { mask: 6, type: "moon", cost: 5, effect: ["so", "ss"], pv: "0", extra: [, "p1", "per", "ss"], qty: 1 },
             { mask: 1, type: "moon", cost: 1, effect: ["xca", "to", "sj", "sj", "sj"], pv: 2, extra: [], qty: 2 },
