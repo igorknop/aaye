@@ -5,15 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ààyè</title>
-    <link rel="stylesheet" href="./aiye-style.css"></link>
+    <link rel="stylesheet" href="./aiye-style.css">
+    </link>
 </head>
 
 <body>
     <h1>Ààyè<br /> CC-BY-ND-NC André Teruya &amp; Igor Knop</h1>
     <div class="paper a4"></div>
     <script type="module">
-        import {CARDS} from './aiye-cards.js';
-        import {createCard, stats} from './aiye-game.js';
+        import { CARDS } from './aiye-cards.js';
+        import { createCard, stats } from './aiye-game.js';
 
         const eCards = document.querySelector(".paper");
         for (let c in CARDS) {
@@ -24,6 +25,11 @@
         }
         console.table(stats);
         document.body.appendChild(eCards);
+        addEventListener('keydown', (e) => {
+            if(e.code === "KeyD"){
+                document.body.classList.toggle('debugon');
+            }
+        });
     </script>
 </body>
 
