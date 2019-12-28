@@ -1,0 +1,433 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.paper {
+    margin: auto;
+    font-size: 0;
+    text-align: center;
+    height: 100%;
+    display: block;
+    /*
+            padding: 5mm;
+            display: table;
+            align-content: center;
+            flex-wrap: wrap;
+            display: flex;
+            border: 0.1mm solid lightgray;
+            */
+}
+
+.a4 {
+    /*
+            width: 210mm;
+            height: 297mm;
+            */
+}
+
+@font-face {
+    font-family: "p22";
+    src: url("./assets/P22Vincent.ttf") format("truetype");
+}
+
+.card {
+    box-sizing: border-box;
+    border: 0.01mm solid rgba(90, 49, 20, 0.3);
+    padding: 3mm;
+    position: relative;
+    background-color: rgb(90, 49, 20);
+    color: rgb(90, 49, 20);
+    font-family: "p22", sans-serif;
+    text-shadow: 0.2mm 0.2mm wheat;
+    page-break-inside: avoid;
+    display: inline-block;
+}
+
+.mask1,
+.mask2,
+.mask3,
+.mask4,
+.mask5,
+.mask6 {
+    background-image: url("assets/mask1.png"), url("assets/fundo.png");
+    background-size: 26mm, cover;
+    background-position: 50% 22%, center center;
+    background-repeat: no-repeat, no-repeat;
+}
+
+.mask3,
+.mask4,
+.mask5,
+.mask6 {
+    /*border: 0.8mm dashed rgba(212, 121, 1, 0.6);*/
+    background-image: url("assets/mask1.png"), url("assets/fundo.png");
+    background-size: 26mm, 100% 100%, cover;
+    background-position: 50% 22%, center center, center;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+}
+
+.mask2 {
+    background-image: url("assets/mask2.png"), url("assets/fundo.png");
+    background-size: 39mm, cover;
+    background-position: 50% 15%, center center;
+}
+
+.mask3 {
+    background-image: url("assets/mask3.png"), url("assets/frame2.png"), url("assets/fundo.png");
+    background-size: 32mm, 100% 100%, cover;
+    background-position: 50% 15%, center center;
+}
+
+.mask4 {
+    background-image: url("assets/mask4.png"), url("assets/frame2.png"), url("assets/fundo.png");
+    background-size: 31mm, 100% 100%, cover;
+    background-position: 50% 15%, center center;
+}
+
+.mask5 {
+    background-image: url("assets/mask5.png"), url("assets/frame2.png"), url("assets/fundo.png");
+    background-size: 26mm, 100% 100%, cover;
+    background-position: 50% 9%, center center;
+}
+
+.mask6 {
+    background-image: url("assets/mask6.png"), url("assets/frame2.png"), url("assets/fundo.png");
+    background-size: 15mm, 100% 100%, cover;
+    background-position: 50% 10%, center center;
+}
+
+.mini-euro {
+    width: 45mm;
+    height: 68mm;
+}
+
+.type {
+    position: absolute;
+    bottom: 3mm;
+    width: 39mm;
+    height: 12mm;
+}
+
+.moon .moon,
+.sun .sun {
+    font-size: 0;
+    background-image: url("assets/moon.png");
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.sun .sun {
+    background-image: url("assets/sun2.png");
+}
+
+.pv {
+    border: none;
+    position: absolute;
+    bottom: 3mm;
+    left: 3mm;
+    width: 10mm;
+    height: 10mm;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 10mm;
+    font-size: 6.2mm;
+    background-image: url("assets/aaye.png");
+    background-size: contain;
+}
+
+.effect {
+    position: absolute;
+    bottom: 3mm;
+    right: 3mm;
+    width: 12mm;
+    height: 30mm;
+    text-align: right;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-content: end;
+}
+
+.extra {
+    position: absolute;
+    bottom: calc(40% - 7mm);
+    left: calc(50% - 16mm);
+    width: 32mm;
+    height: 8mm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.cost {
+    position: absolute;
+    top: 0.5mm;
+    right: 3mm;
+    width: 8.3mm;
+    height: 10mm;
+    font-size: 7mm;
+    line-height: 8mm;
+    background-repeat: no-repeat;
+    text-align: left;
+    vertical-align: top;
+    background-image: url(assets/sj.png);
+    background-size: 5mm;
+    background-position: 100% 95%;
+}
+
+.item {
+    width: 6mm;
+    height: 6mm;
+    display: inline-block;
+    font-size: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.sn,
+.xsn {
+    background-image: url("assets/sn.png");
+}
+
+.sp,
+.xsp {
+    background-image: url("assets/sp.png");
+}
+
+.so,
+.xso {
+    background-image: url("assets/spears.png");
+}
+
+.ss,
+.xss {
+    background-image: url("assets/shield4.png");
+    height: 10mm;
+}
+
+.sj,
+.xsj {
+    background-image: url("assets/sj.png");
+}
+
+.spear,
+.xspear {
+    background-image: url("assets/spears.png");
+}
+
+.to {
+    background-image: url("assets/down.png");
+}
+
+.ca,
+.xca {
+    width: 7mm;
+    height: 7mm;
+    background-image: url("assets/ca.png");
+}
+
+.pile,
+.gpile,
+.spile,
+.extra .ca {
+    font-size: 0;
+    background-image: url("assets/pile.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 7mm;
+    width: 10mm;
+}
+
+.gpile {
+    background-image: url("assets/gpile.png");
+}
+
+.spile {
+    background-image: url("assets/spile.png");
+}
+
+.extra .ca {
+    background-image: url("assets/ca.png");
+}
+
+.per {
+    border-block-color: transparent;
+    visibility: hidden;
+    width: 6mm;
+    height: 8mm;
+}
+
+.per::before {
+    margin: 1.8mm;
+    content: ":";
+    font-size: 8mm;
+    line-height: 8mm;
+    visibility: visible;
+}
+
+.merge,
+.split,
+.mca,
+.ms,
+.sa {
+    border: none;
+    font-size: 0;
+    background-image: url("assets/merge2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 12mm;
+    height: 10mm;
+}
+
+.mca {
+    background-image: url("assets/mca.png");
+}
+
+.ms {
+    background-image: url("assets/ms.png");
+}
+
+.split {
+    background-image: url("assets/split.png");
+}
+
+.sa {
+    background-image: url("assets/sa3.png");
+}
+
+.p1 {
+    font-size: 0;
+    content: "1";
+    text-align: center;
+    background-image: url("assets/aaye.png");
+    background-size: contain;
+    width: 7mm;
+    height: 7mm;
+}
+
+.p1::before {
+    font-size: 5mm;
+    content: "1";
+    visibility: visible;
+}
+
+.p2 {
+    font-size: 0;
+    content: "2";
+    text-align: center;
+    background-image: url("assets/aaye.png");
+    background-size: contain;
+    width: 7mm;
+    height: 7mm;
+}
+
+.p2::before {
+    font-size: 5mm;
+    content: "2";
+    visibility: visible;
+}
+
+.p5,
+.p8,
+.p11 {
+    font-size: 0;
+    text-align: center;
+    background-image: url("assets/aaye.png");
+    background-size: contain;
+    width: 6mm;
+    height: 6mm;
+}
+
+.p5::before {
+    font-size: 4mm;
+    content: "5";
+    visibility: visible;
+}
+
+.p8::before {
+    font-size: 4mm;
+    content: "8";
+    visibility: visible;
+}
+
+.p11::before {
+    font-size: 4mm;
+    content: "11";
+    visibility: visible;
+}
+
+.pn1 {
+    font-size: 0;
+    content: "1";
+    text-align: center;
+    background-image: url("assets/aaye.png");
+    background-size: contain;
+    width: 7mm;
+    height: 7mm;
+}
+
+.pn1::before {
+    font-size: 5mm;
+    content: "-1";
+    visibility: visible;
+}
+
+.pair,
+.equi,
+.sh {
+    font-size: 0;
+    width: 15mm;
+    height: 7mm;
+    background-size: contain;
+    background-image: url("assets/pair2.png");
+    background-repeat: no-repeat;
+}
+
+.sh {
+    background-image: url("assets/sh.png");
+    width: 18mm;
+    height: 7mm;
+}
+
+.equi {
+    background-size: 19mm;
+    width: 19mm;
+    background-image: url("assets/equi2.png");
+}
+
+.initial {
+    font-size: 0;
+    background-image: url(assets/initial.png);
+    background-size: contain;
+    width: 100%;
+    margin-left: 0;
+    margin-top: -38mm;
+    background-size: 9mm;
+    background-repeat: no-repeat;
+    background-position: left;
+    align-self: flex-start;
+}
+
+@media print {
+    html {
+        margin: auto;
+        -webkit-print-color-adjust: exact;
+    }
+    h1 {
+        display: none;
+    }
+    .card {
+        page-break-inside: avoid;
+    }
+}
+
+@page {
+    size: A3 portrait;
+    margin: 3mm;
+    -webkit-print-color-adjust: exact;
+}
