@@ -250,6 +250,7 @@
 .pile,
 .gpile,
 .spile,
+.pile3,
 .extra .ca {
     font-size: 0;
     background-image: url("assets/pile.png");
@@ -260,12 +261,18 @@
 }
 
 .gpile {
-    background-image: url("assets/gpile.png");
+    background-image: url("assets/g5pile.png");
 }
 
+
 .spile {
-    background-image: url("assets/spile.png");
+    background-image: url("assets/g2pile.png");
 }
+
+.pile3 {
+    background-image: url("assets/g3pile.png");
+}
+
 
 .extra .ca {
     background-image: url("assets/ca.png");
@@ -332,7 +339,7 @@
     visibility: visible;
 }
 
-.p2 {
+.p2,.p3{
     font-size: 0;
     content: "2";
     text-align: center;
@@ -359,6 +366,11 @@
     height: 6mm;
 }
 
+.p3::before {
+    font-size: 5mm;
+    content: "3";
+    visibility: visible;
+}
 .p5::before {
     font-size: 4mm;
     content: "5";

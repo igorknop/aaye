@@ -18,7 +18,7 @@ const VALUES = {
     'mca': -0.5,//join
     'sa': 2,//seed again
     'ms': 0.5,//move seed
-    'tier': (0.10*0+0.30*5+0.30*8+0.30*11),
+    'tier': (0.10*0+0.30*5+0.30*8+0.30*11)*2,
 };
 
 export const CARDS = [
@@ -46,7 +46,7 @@ export const CARDS = [
     { mask: 2, type: "sun", cost: 3, effect: ["so", "sp"], pv: 2, extra: [], qty: 3 },
     { mask: 1, type: "moon", cost: 3, effect: ["so", "sn"], pv: 2, extra: [], qty: 3 },
 
-    { mask: 5, type: "sun", cost: 5, effect: ["xsj", "to", "sn", "sn", "sn"], pv: 16, extra: [, "pn1", "per", "sj"], qty: 1 , value: -VALUES.tier},
+    { mask: 5, type: "sun", cost: 5, effect: ["xsj", "to", "sn", "sn", "sn"], pv: 11, extra: [, "pn1", "per", "sj"], qty: 1 , value: -VALUES.tier},
     { mask: 1, type: "moon", cost: 3, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 2, extra: [], qty: 1 },
     { mask: 2, type: "sun", cost: 3, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 2, extra: [], qty: 1 },
     { mask: 1, type: "moon", cost: 3, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 2, extra: [], qty: 1 },
@@ -54,8 +54,8 @@ export const CARDS = [
     { mask: 2, type: "sun", cost: 3, effect: ["xsn", "to", "sp", "sp", "sp"], pv: 2, extra: [], qty: 1 },
     { mask: 2, type: "sun", cost: 3, effect: ["xsn", "to", "sp", "sp", "sp"], pv: 2, extra: [], qty: 1 },
 
-    { mask: 6, type: "sun", cost: 5, effect: ["merge"], pv: "0", extra: [, "p1", "per", "gpile"], qty: 1 , value: VALUES.tier},
-    { mask: 5, type: "moon", cost: 5, effect: ["split"], pv: "0", extra: [, "p1", "per", "spile"], qty: 1 },
+    { mask: 6, type: "sun", cost: 5, effect: ["merge"], pv: "0", extra: [, "p5", "per", "gpile"], qty: 1 , value: VALUES.tier},
+    { mask: 5, type: "moon", cost: 5, effect: ["sp", "split"], pv: "0", extra: [, "p2", "per", "spile"], qty: 1 },
     { mask: 1, type: "moon", cost: 3, effect: ["sp", "merge"], pv: 2, extra: [], qty: 1 },
     { mask: 2, type: "sun", cost: 3, effect: ["sp", "merge"], pv: 2, extra: [], qty: 1 },
     { mask: 1, type: "moon", cost: 3, effect: ["sa", "split"], pv: 2, extra: [], qty: 1 },
@@ -76,7 +76,7 @@ export const CARDS = [
     { mask: 2, type: "sun", cost: 3, effect: ["sa", "ca"], pv: 2, extra: [], qty: 1 },
 
     /**/
-    { mask: 5, type: "moon", cost: 5, effect: ["ss", "ms"], pv: "0", extra: ["p5", "p8", "p11", "per", "sj"], qty: 1 , value: VALUES.tier},
+    { mask: 5, type: "moon", cost: 5, effect: ["ss", "ms"], pv: "0", extra: ["p3", "per", "pile3"], qty: 1 , value: VALUES.tier},
     { mask: 1, type: "moon", cost: 2, effect: ["sa"], pv: 2, extra: [], qty: 3 },
     { mask: 2, type: "sun", cost: 2, effect: ["sa"], pv: 2, extra: [], qty: 3 },
 
@@ -120,7 +120,7 @@ export const CARDSO = [
     { mask: 2, type: "sun", cost: 3, effect: ["xca", "to", "sj", "sj", "sj"], pv: 4, extra: [], qty: 1 },
 
 
-    { mask: 5, type: "moon", cost: 5, effect: ["xca", "to", "sj", "sj", "sj"], pv: 16, extra: ["pn1", "per", "ca"], qty: 1 },
+    { mask: 5, type: "moon", cost: 5, effect: ["xca", "to", "sj", "sj", "sj"], pv: 15, extra: ["pn1", "per", "ca"], qty: 1 },
     { mask: 3, type: "sun", cost: 5, effect: ["sp"], pv: "0", extra: ["p2", "per", "sp", "sn"], qty: 1 },
     { mask: 3, type: "sun", cost: 5, effect: ["so"], pv: "0", extra: ["p2", "per", "so", "sn"], qty: 1 },
 
