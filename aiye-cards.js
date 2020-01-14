@@ -11,7 +11,7 @@ const VALUES = {
     'ca': 1,//card
     'xca': -1,//card
     'per': 0,//card
-    'so': 1,//attack
+    'so': 0.5,//attack
     'ss': 0.5,//defense
     'split': -0.5,//split
     'join': 1,//join
@@ -23,44 +23,44 @@ const VALUES = {
 
 export const CARDS = [
     { mask: 3, type: "moon", cost: 5, effect: ["sn", "sn"], pv: "0", extra: ["p5", "p8", "p11", "per", "sn"], qty: 1 , value: VALUES.tier},
-    { mask: 1, type: "moon", cost: 0, effect: ["sn"], pv: 0, extra: ["initial"], qty: 3 },
-    { mask: 2, type: "sun", cost: 0, effect: ["sp"], pv: 0, extra: ["initial"], qty: 2 },
+    { mask: 1, type: "moon", cost: 0, effect: ["sn"], pv: 1, extra: ["initial"], qty: 3 },
+    { mask: 2, type: "sun", cost: 0, effect: ["sp"], pv: 1, extra: ["initial"], qty: 2 },
     { mask: 2, type: "sun", cost: 0, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 0, extra: ["initial"], qty: 1 },
 
     { mask: 3, type: "moon", cost: 5, effect: ["sp", "sp"], pv: "0", extra: ["p5", "p8", "p11", "per", "sp"], qty: 1 , value: VALUES.tier},
-    { mask: 1, type: "moon", cost: 0, effect: ["sn"], pv: 0, extra: ["initial"], qty: 3 },
-    { mask: 2, type: "sun", cost: 0, effect: ["sp"], pv: 0, extra: ["initial"], qty: 2 },
+    { mask: 1, type: "moon", cost: 0, effect: ["sn"], pv: 1, extra: ["initial"], qty: 3 },
+    { mask: 2, type: "sun", cost: 0, effect: ["sp"], pv: 1, extra: ["initial"], qty: 2 },
     { mask: 2, type: "sun", cost: 0, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 0, extra: ["initial"], qty: 1 },
 
     { mask: 4, type: "sun", cost: 5, effect: ["sn", "sn"], pv: "0", extra: ["p5", "p8", "p11", "per", "sn"], qty: 1, value: VALUES.tier },
-    { mask: 1, type: "moon", cost: 0, effect: ["sn"], pv: 0, extra: ["initial"], qty: 3 },
-    { mask: 2, type: "sun", cost: 0, effect: ["sp"], pv: 0, extra: ["initial"], qty: 2 },
+    { mask: 1, type: "moon", cost: 0, effect: ["sn"], pv: 1, extra: ["initial"], qty: 3 },
+    { mask: 2, type: "sun", cost: 0, effect: ["sp"], pv: 1, extra: ["initial"], qty: 2 },
     { mask: 2, type: "sun", cost: 0, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 0, extra: ["initial"], qty: 1 },
 
     { mask: 4, type: "sun", cost: 5, effect: ["sp", "sp"], pv: "0", extra: [, "p5", "p8", "p11", "per", "sp"], qty: 1 , value: VALUES.tier},
-    { mask: 1, type: "moon", cost: 0, effect: ["sn"], pv: 0, extra: ["initial"], qty: 3 },
-    { mask: 2, type: "sun", cost: 0, effect: ["sp"], pv: 0, extra: ["initial"], qty: 2 },
+    { mask: 1, type: "moon", cost: 0, effect: ["sn"], pv: 1, extra: ["initial"], qty: 3 },
+    { mask: 2, type: "sun", cost: 0, effect: ["sp"], pv: 1, extra: ["initial"], qty: 2 },
     { mask: 2, type: "sun", cost: 0, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 0, extra: ["initial"], qty: 1 },
 
     { mask: 4, type: "sun", cost: 5, effect: ["so", "ss"], pv: "0", extra: [, "p5", "p8", "p11", "per", "sn", "sp"], qty: 1 , value: VALUES.tier},
-    { mask: 2, type: "sun", cost: 3, effect: ["so", "sp"], pv: 4, extra: [], qty: 3 },
-    { mask: 1, type: "moon", cost: 3, effect: ["so", "sn"], pv: 4, extra: [], qty: 3 },
+    { mask: 2, type: "sun", cost: 3, effect: ["so", "sp"], pv: 2, extra: [], qty: 3 },
+    { mask: 1, type: "moon", cost: 3, effect: ["so", "sn"], pv: 2, extra: [], qty: 3 },
 
     { mask: 5, type: "sun", cost: 5, effect: ["xsj", "to", "sn", "sn", "sn"], pv: 16, extra: [, "pn1", "per", "sj"], qty: 1 , value: -VALUES.tier},
-    { mask: 1, type: "moon", cost: 3, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 4, extra: [], qty: 1 },
-    { mask: 2, type: "sun", cost: 3, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 4, extra: [], qty: 1 },
-    { mask: 1, type: "moon", cost: 3, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 4, extra: [], qty: 1 },
-    { mask: 1, type: "moon", cost: 3, effect: ["xsn", "to", "sp", "sp", "sp"], pv: 4, extra: [], qty: 1 },
-    { mask: 2, type: "sun", cost: 3, effect: ["xsn", "to", "sp", "sp", "sp"], pv: 4, extra: [], qty: 1 },
-    { mask: 2, type: "sun", cost: 3, effect: ["xsn", "to", "sp", "sp", "sp"], pv: 4, extra: [], qty: 1 },
+    { mask: 1, type: "moon", cost: 3, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 2, extra: [], qty: 1 },
+    { mask: 2, type: "sun", cost: 3, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 2, extra: [], qty: 1 },
+    { mask: 1, type: "moon", cost: 3, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 2, extra: [], qty: 1 },
+    { mask: 1, type: "moon", cost: 3, effect: ["xsn", "to", "sp", "sp", "sp"], pv: 2, extra: [], qty: 1 },
+    { mask: 2, type: "sun", cost: 3, effect: ["xsn", "to", "sp", "sp", "sp"], pv: 2, extra: [], qty: 1 },
+    { mask: 2, type: "sun", cost: 3, effect: ["xsn", "to", "sp", "sp", "sp"], pv: 2, extra: [], qty: 1 },
 
     { mask: 6, type: "sun", cost: 5, effect: ["merge"], pv: "0", extra: [, "p1", "per", "gpile"], qty: 1 , value: VALUES.tier},
     { mask: 5, type: "moon", cost: 5, effect: ["split"], pv: "0", extra: [, "p1", "per", "spile"], qty: 1 },
-    { mask: 1, type: "moon", cost: 1, effect: ["sp", "merge"], pv: 3, extra: [], qty: 1 },
-    { mask: 2, type: "sun", cost: 1, effect: ["sp", "merge"], pv: 3, extra: [], qty: 1 },
-    { mask: 1, type: "moon", cost: 1, effect: ["sn", "split"], pv: 3, extra: [], qty: 1 },
-    { mask: 2, type: "sun", cost: 1, effect: ["sn", "split"], pv: 3, extra: [], qty: 1 },
-    { mask: 2, type: "sun", cost: 2, effect: ["ca", "to", "sj", "sj", "sj"], pv: 3, extra: [], qty: 1 },
+    { mask: 1, type: "moon", cost: 3, effect: ["sp", "merge"], pv: 2, extra: [], qty: 1 },
+    { mask: 2, type: "sun", cost: 3, effect: ["sp", "merge"], pv: 2, extra: [], qty: 1 },
+    { mask: 1, type: "moon", cost: 3, effect: ["sa", "split"], pv: 2, extra: [], qty: 1 },
+    { mask: 2, type: "sun", cost: 3, effect: ["sa", "split"], pv: 2, extra: [], qty: 1 },
+    { mask: 2, type: "sun", cost: 3, effect: ["sa", "split"], pv: 2, extra: [], qty: 1 },
 
 
     { mask: 3, type: "sun", cost: 5, effect: ["so", "ss", "mca"], pv: "0", extra: [, "p2", "per", "pair"], qty: 1 , value: VALUES.tier},
@@ -73,16 +73,16 @@ export const CARDS = [
     { mask: 5, type: "moon", cost: 5, effect: ["ca", "sa"], pv: "0", extra: [, "p1", "per", "moon"], qty: 1 },
     { mask: 1, type: "moon", cost: 1, effect: ["sn", "ca"], pv: 2, extra: [], qty: 2 },
     { mask: 2, type: "sun", cost: 1, effect: ["sn", "ca"], pv: 2, extra: [], qty: 2 },
-    { mask: 2, type: "sun", cost: 3, effect: ["ca", "sa"], pv: 4, extra: [], qty: 1 },
+    { mask: 2, type: "sun", cost: 3, effect: ["sa", "ca"], pv: 2, extra: [], qty: 1 },
 
     /**/
     { mask: 5, type: "moon", cost: 5, effect: ["ss", "ms"], pv: "0", extra: ["p5", "p8", "p11", "per", "sj"], qty: 1 , value: VALUES.tier},
-    { mask: 1, type: "moon", cost: 3, effect: ["sa"], pv: 1, extra: [], qty: 3 },
-    { mask: 2, type: "sun", cost: 3, effect: ["sa"], pv: 1, extra: [], qty: 3 },
+    { mask: 1, type: "moon", cost: 2, effect: ["sa"], pv: 2, extra: [], qty: 3 },
+    { mask: 2, type: "sun", cost: 2, effect: ["sa"], pv: 2, extra: [], qty: 3 },
 
     { mask: 4, type: "moon", cost: 5, effect: ["ss", "sp"], pv: "0", extra: [, "p5", "p8", "p11", "per", "sn", "sp"], qty: 1 , value: VALUES.tier},
-    { mask: 1, type: "moon", cost: 1, effect: ["sn", "ms"], pv: 3, extra: [], qty: 3 },
-    { mask: 2, type: "sun", cost: 1, effect: ["sp", "ms"], pv: 3, extra: [], qty: 3 },
+    { mask: 1, type: "moon", cost: 1, effect: ["sn", "ms"], pv: 2, extra: [], qty: 3 },
+    { mask: 2, type: "sun", cost: 1, effect: ["sp", "ms"], pv: 2, extra: [], qty: 3 },
 
     { mask: 5, type: "sun", cost: 5, effect: ["so", "ss"], pv: "0", extra: [, "p5", "p8", "p11", "per", "so", "ss"], qty: 1 , value: VALUES.tier},
     { mask: 5, type: "moon", cost: 5, effect: ["so", "ss"], pv: "0", extra: [, "p1", "per", "so"], qty: 1 , value: VALUES.tier},
