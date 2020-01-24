@@ -69,7 +69,7 @@ export const CARDS = [
     { mask: 2, type: "sun", cost: 1, effect: ["ss", "mca"], pv: 3, extra: [], qty: 2 },
     { mask: 1, type: "moon", cost: 1, effect: ["so", "mca"], pv: 2, extra: [], qty: 1 },
 
-    { mask: 6, type: "neutral", cost: 5, effect: ["ca", "sa"], pv: "0", extra: ["p5", "p8", "p11", "per", "sun", "sun"], qty: 1 , value: VALUES.tier},
+    { mask: 6, type: "sun", cost: 5, effect: ["ca", "sa"], pv: "0", extra: ["p5", "p8", "p11", "per", "sun", "sun"], qty: 1 , value: VALUES.tier},
     { mask: 5, type: "neutral", cost: 5, effect: ["ca", "sa"], pv: "0", extra: ["p5", "p8", "p11", "per", "moon", "moon"], qty: 1 },
     { mask: 1, type: "moon", cost: 1, effect: ["sn", "ca"], pv: 2, extra: [], qty: 2 },
     { mask: 2, type: "sun", cost: 1, effect: ["sn", "ca"], pv: 2, extra: [], qty: 2 },
