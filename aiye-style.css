@@ -251,6 +251,7 @@
 .gpile,
 .spile,
 .pile3,
+.pile4,
 .extra .ca {
     font-size: 0;
     background-image: url("assets/pile.png");
@@ -271,6 +272,9 @@
 
 .pile3 {
     background-image: url("assets/g3pile.png");
+}
+.pile4 {
+    background-image: url("assets/g4pile.png");
 }
 
 
@@ -355,6 +359,7 @@
     visibility: visible;
 }
 
+.p4,
 .p5,
 .p8,
 .p11 {
@@ -369,6 +374,11 @@
 .p3::before {
     font-size: 5mm;
     content: "3";
+    visibility: visible;
+}
+.p4::before {
+    font-size: 5mm;
+    content: "4";
     visibility: visible;
 }
 .p5::before {
