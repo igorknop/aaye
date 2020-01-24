@@ -110,8 +110,8 @@
     height: 12mm;
 }
 
-.extra .moon,
-.extra .sun {
+.card .moon,
+.card .sun {
     font-size: 0;
     background-image: url("assets/moon.png");
     background-size: contain;
@@ -119,7 +119,7 @@
     background-repeat: no-repeat;
 }
 
-.extra .sun {
+.card .sun {
     background-image: url("assets/sun2.png");
 }
 
