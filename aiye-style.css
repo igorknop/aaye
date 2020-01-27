@@ -54,8 +54,8 @@
 .mask7,
 .mask8 {
     background-image: url("assets/mask1.png"), url("assets/fundo.png");
-    background-size: 26mm, cover;
-    background-position: 50% 22%, center center;
+    background-size: 21mm, cover;
+    background-position: 50% 15%, center center;
     background-repeat: no-repeat, no-repeat;
 }
 
@@ -70,9 +70,14 @@
     background-repeat: no-repeat, no-repeat, no-repeat;
 }
 
+.mask1 {
+    background-image: url("assets/mask1.png"), url("assets/frame2.png"), url("assets/fundo.png");
+    background-size: 21mm, 100% 100%, cover;
+    background-position: 50% 15%, center center;
+}
 .mask2 {
-    background-image: url("assets/mask2.png"), url("assets/fundo.png");
-    background-size: 39mm, cover;
+    background-image: url("assets/mask2.png"), url("assets/frame2.png"), url("assets/fundo.png");
+    background-size: 31mm, 100% 100%, cover;
     background-position: 50% 15%, center center;
 }
 
@@ -99,36 +104,39 @@
     background-size: 15mm, 100% 100%, cover;
     background-position: 50% 10%, center center;
 }
-.mask6 {
+.mask7 {
     background-image: url("assets/mask5.png"), url("assets/frame2.png"), url("assets/fundo.png");
     background-size: 26mm, 100% 100%, cover;
     background-position: 50% 9%, center center;
 }
 
-.mask7 {
+.mask8 {
     background-image: url("assets/mask6.png"), url("assets/frame2.png"), url("assets/fundo.png");
     background-size: 15mm, 100% 100%, cover;
     background-position: 50% 10%, center center;
 }
 
-.orun .mask1,
-.orun .mask2,
-.orun .mask3,
-.orun .mask4,
-.orun .mask5,
-.orun .mask6,
-.orun .mask7,
-.orun .mask8 {
+.orun .mask10,
+.orun .mask11,
+.orun .mask12,
+.orun .mask13,
+.orun .mask14,
+.orun .mask15,
+.orun .mask16,
+.orun .mask17,
+.orun .mask18,
+.orun .mask19,
+.orun .mask20 {
      background-image: url("assets/orun-temp/orun1.png"), url("assets/fundo.png");
      background-size: 15mm, cover;
      background-position: 50% 22%, center center;
     background-repeat: no-repeat, no-repeat;
 }
 
-.orun .mask3,
-.orun .mask4,
-.orun .mask5,
-.orun .mask6 {
+.orun .mask12,
+.orun .mask13,
+.orun .mask14,
+.orun .mask15 {
     /*border: 0.8mm dashed rgba(212, 121, 1, 0.6);*/
     background-image: url("assets/orun-temp/orun6.png"), url("assets/fundo.png");
     background-size: 15mm, 100% 100%, cover;
@@ -136,49 +144,72 @@
     background-repeat: no-repeat, no-repeat, no-repeat;
 }
 
-.orun .mask2 {
+.orun .mask10 {
     background-image: url("assets/orun-temp/orun2.png"), url("assets/fundo.png");
     background-size: 25mm, cover;
     background-position: 50% 15%, center center;
 }
 
-.orun .mask3 {
-    background-image: url("assets/orun-temp/orun3.png"), url("assets/frame2.png"), url("assets/fundo.png");
+.orun .mask11 {
+    background-image: url("assets/orun-temp/orun3.png"),  url("assets/fundo.png");
     background-size: 39mm, 100% 100%, cover;
+    background-position: 50% 33%, center center;
+}
+
+.orun .mask12 {
+    background-image: url("assets/orun-temp/orun4.png"), url("assets/fundo.png");
+    background-size: 24mm, 100% 100%, cover;
     background-position: 50% 15%, center center;
 }
 
-.orun .mask4 {
-    background-image: url("assets/orun-temp/orun4.png"), url("assets/frame2.png"), url("assets/fundo.png");
-    background-size: 16mm, 100% 100%, cover;
-    background-position: 50% 15%, center center;
+.orun .mask13 {
+    background-image: url("assets/orun-temp/orun5.png"),  url("assets/fundo.png");
+    background-size: 18mm, cover;
+    background-position: 50% 43%, center center;
 }
 
-.orun .mask5 {
-    background-image: url("assets/orun-temp/orun5.png"), url("assets/frame2.png"), url("assets/fundo.png");
-    background-size: 13mm, 100% 100%, cover;
-    background-position: 50% 9%, center center;
+.orun .mask14 {
+    background-image: url("assets/orun-temp/orun6.png"), url("assets/fundo.png");
+    background-size: 19mm, 100% 100%, cover;
+    background-position: 50% 45%, center center;
 }
 
-.orun .mask6 {
-    background-image: url("assets/orun-temp/orun6.png"), url("assets/frame2.png"), url("assets/fundo.png");
-    background-size: 15mm, 100% 100%, cover;
-    background-position: 50% 10%, center center;
-}
-
-.orun .mask7 {
+.orun .mask15 {
     /*border: 0.8mm dashed rgba(212, 121, 1, 0.6);*/
     background-image: url("assets/orun-temp/orun7.png"), url("assets/fundo.png");
-    background-size: 15mm, 100% 100%, cover;
+    background-size: 13mm, 100% 100%, cover;
     background-position: 50% 22%, center center, center;
     background-repeat: no-repeat, no-repeat, no-repeat;
 }
 
-.orun .mask8 {
+.orun .mask16 {
+    background-image: url("assets/orun-temp/orun8.png"), url("assets/fundo.png");
+    background-size: 42mm, cover;
+    background-position: 50% 38%, center center;
+}
+.orun .mask17 {
     background-image: url("assets/orun-temp/orun9.png"), url("assets/fundo.png");
     background-size: 28mm, cover;
     background-position: 50% 15%, center center;
 }
+.orun .mask18 {
+    background-image: url("assets/orun-temp/orun1.png"), url("assets/fundo.png");
+    background-size: 15mm, cover;
+    background-position: 50% 20%, center center;
+}
+
+.orun .mask19 {
+    background-image: url("assets/orun-temp/orun1.png"), url("assets/fundo.png");
+    background-size: 15mm, cover;
+    background-position: 50% 20%, center center;
+}
+
+.orun .mask20 {
+    background-image: url("assets/orun-temp/orun1.png"), url("assets/fundo.png");
+    background-size: 28mm, cover;
+    background-position: 50% 15%, center center;
+}
+
 .mini-euro {
     width: 45mm;
     height: 68mm;
