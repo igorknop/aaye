@@ -29,9 +29,15 @@
             if(e.code === "KeyD"){
                 document.body.classList.toggle('debugon');
             }
+            if(e.code === "KeyO"){
+                document.body.classList.toggle('orun');
+            }
         });
         if(window.location.href.indexOf("debug")>0){
             document.body.classList.toggle('debugon');
+        }
+        if(window.location.href.indexOf("orun")>0){
+            document.body.classList.toggle('orun');
         }
     </script>
 </body>

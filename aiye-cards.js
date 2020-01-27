@@ -43,8 +43,8 @@ export const CARDS = [
     { mask: 2, type: "neutral", cost: 0, effect: ["sn", "sp"], pv: 0, extra: ["initial"], qty: 1 },
 
     { mask: 4, type: "neutral", cost: 5, effect: ["so", "ss"], pv: "0", extra: [, "p5", "p8", "p11", "per", "sn", "sp"], qty: 1 , value: VALUES.tier},
-    { mask: 2, type: "sun", cost: 3, effect: ["so", "sp"], pv: 2, extra: [], qty: 3 },
-    { mask: 1, type: "moon", cost: 3, effect: ["so", "sn"], pv: 2, extra: [], qty: 3 },
+    { mask: 7, type: "sun", cost: 3, effect: ["so", "sp"], pv: 2, extra: [], qty: 3 },
+    { mask: 7, type: "moon", cost: 3, effect: ["so", "sn"], pv: 2, extra: [], qty: 3 },
 
     { mask: 5, type: "neutral", cost: 5, effect: ["xsj", "to", "sn", "sn", "sn"], pv: 11, extra: [, "pn1", "per", "sj"], qty: 1 , value: -VALUES.tier},
     { mask: 1, type: "neutral", cost: 3, effect: ["xsp", "to", "sn", "sn", "sn"], pv: 2, extra: [], qty: 1 },
@@ -77,8 +77,8 @@ export const CARDS = [
 
     /**/
     { mask: 5, type: "neutral", cost: 5, effect: ["ss", "ms"], pv: "0", extra: ["p3", "per", "pile3"], qty: 1 , value: VALUES.tier},
-    { mask: 1, type: "neutral", cost: 2, effect: ["sa"], pv: 2, extra: [], qty: 3 },
-    { mask: 2, type: "neutral", cost: 2, effect: ["sa"], pv: 2, extra: [], qty: 3 },
+    { mask: 8, type: "neutral", cost: 2, effect: ["sa"], pv: 2, extra: [], qty: 3 },
+    { mask: 8, type: "neutral", cost: 2, effect: ["sa"], pv: 2, extra: [], qty: 3 },
 
     { mask: 4, type: "neutral", cost: 5, effect: ["ss", "sp"], pv: "0", extra: ["p5", "p8", "p11", "per", "sn", "sp"], qty: 1 , value: VALUES.tier},
     { mask: 1, type: "moon", cost: 1, effect: ["sn", "ms"], pv: 2, extra: [], qty: 3 },
