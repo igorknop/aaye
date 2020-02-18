@@ -14,11 +14,22 @@ export function createCard(card) {
     eType.innerText = card.type;
     eCard.appendChild(eType);
     stats[`${card.type}`] = stats[`${card.type}`] ? stats[`${card.type}`] + 1 : 1;
+
     let eCost = document.createElement("div");
     eCost.classList.add("cost");
+    switch (card.costType) {
+        case 1:
+            eCost.classList.add("sn");
+            break;
+        case 2:
+            eCost.classList.add("sp");
+            break;
+    }
+   
     eCost.innerText = card.cost;
     eCard.appendChild(eCost);
     stats[`$${card.cost}`] = stats[`$${card.cost}`] ? stats[`$${card.cost}`] + 1 : 1;
+
     let eExtra = document.createElement("div");
     eExtra.classList.add("extra");
     if (card.extra.length > 0 && card.extra[0] !== "initial") {
@@ -52,6 +63,7 @@ export function createCard(card) {
         eItem.classList.add(item);
         eItem.innerText = item;
         eEffect.appendChild(eItem);
+        stats[`action ${item}`] = stats[`action ${item}`] ? stats[`action ${item}`] + 1 : 1;
     }
     eCard.appendChild(eEffect);
 

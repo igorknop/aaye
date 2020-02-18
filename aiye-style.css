@@ -292,6 +292,15 @@
     background-position: 100% 95%;
 }
 
+.cost.sp {
+    background-image: url(assets/sp.png);
+}
+
+.cost.sn {
+    background-image: url(assets/sn.png);
+}
+
+
 .debugon .cardValue {
     position: absolute;
     top: 0.5mm;
