@@ -21,10 +21,10 @@ export function createCard(card) {
     eCost.classList.add("cost");
     switch (card.costType) {
         case 1:
-            eCost.classList.add("sn");
+            eCost.classList.add('seedlight');
             break;
         case 2:
-            eCost.classList.add("sp");
+            eCost.classList.add('seeddark');
             break;
     }
    

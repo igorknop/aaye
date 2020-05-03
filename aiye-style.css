@@ -6,7 +6,7 @@
 
 
 .paper {
-    width: calc(45mm * 7);
+    -width: calc(45mm * 7);
     margin: auto;
     font-size: 0;
     text-align: center;
@@ -294,11 +294,11 @@
     background-position: 100% 95%;
 }
 
-.cost.sp {
+.cost.seeddark {
     background-image: url(assets/sp.png);
 }
 
-.cost.sn {
+.cost.seedlight {
     background-image: url(assets/sn.png);
 }
 
@@ -328,29 +328,29 @@
     background-repeat: no-repeat;
 }
 
-.sn,
-.xsn {
+.seedlight,
+.xseedlight {
     background-image: url("assets/sn.png");
 }
 
-.sp,
-.xsp {
+.seeddark,
+.xseeddark {
     background-image: url("assets/sp.png");
 }
 
-.so,
-.xso {
+.attack,
+.xattack {
     background-image: url("assets/spears.png");
 }
 
-.ss,
-.xss {
+.defense,
+.xdefense {
     background-image: url("assets/shield4.png");
     height: 10mm;
 }
 
-.sj,
-.xsj {
+.seedjoker,
+.xseedjoker {
     background-image: url("assets/sj.png");
 }
 
@@ -363,8 +363,8 @@
     background-image: url("assets/down.png");
 }
 
-.ca,
-.xca {
+.buy,
+.xbuy {
     width: 7mm;
     height: 7mm;
     background-image: url("assets/ca.png");
@@ -375,7 +375,7 @@
 .spile,
 .pile3,
 .pile4,
-.extra .ca {
+.extra .buy {
     font-size: 0;
     background-image: url("assets/pile.png");
     background-size: contain;
@@ -401,7 +401,7 @@
 }
 
 
-.extra .ca {
+.extra .buy {
     background-image: url("assets/ca.png");
 }
 
@@ -422,9 +422,9 @@
 
 .merge,
 .split,
-.mca,
-.ms,
-.sa {
+.movecards,
+.moveseeds,
+.seedagain {
     border: none;
     font-size: 0;
     background-image: url("assets/merge2.png");
@@ -434,11 +434,11 @@
     height: 10mm;
 }
 
-.mca {
+.movecards {
     background-image: url("assets/mca.png");
 }
 
-.ms {
+.moveseeds {
     background-image: url("assets/ms.png");
 }
 
@@ -446,7 +446,7 @@
     background-image: url("assets/split.png");
 }
 
-.sa {
+.seedagain {
     background-image: url("assets/sa3.png");
 }
 
