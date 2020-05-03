@@ -1,4 +1,6 @@
-export const stats = {};
+export const stats = {
+    cards: 4
+};
 
 
 export function createCard(card) {
@@ -71,7 +73,7 @@ export function createCard(card) {
     console.log(card.type, card.value);
 
     eValue.classList.add("cardValue");
-    eValue.textContent = card.value;
+    eValue.textContent = `${card.name} ${card.value}`;
     eCard.appendChild(eValue);
     return eCard;
 }
