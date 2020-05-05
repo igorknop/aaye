@@ -70,10 +70,13 @@ export function createCard(card) {
     eCard.appendChild(eEffect);
 
     const eValue = document.createElement("div");
-    console.log(card.type, card.value);
-
     eValue.classList.add("cardValue");
     eValue.textContent = `${card.name} ${card.value}`;
     eCard.appendChild(eValue);
+
+    const eFluffy = document.createElement("div");
+    eFluffy.classList.add("fluffy");
+    eFluffy.textContent = `${card.fluffy}`;
+    eCard.appendChild(eFluffy);
     return eCard;
 }

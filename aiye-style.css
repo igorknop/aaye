@@ -319,6 +319,20 @@
     font-weight: bolder;
 }
 
+.debugon .fluffy {
+    position: absolute;
+    top: 14.5mm;
+    left: 3mm;
+    width: 80%;
+    font-size: 3mm;
+    line-height: 3mm;
+    background-repeat: no-repeat;
+    text-align: left;
+    vertical-align: top;
+    font-family: sans-serif;
+    color: black;
+}
+
 .item {
     width: 6mm;
     height: 6mm;

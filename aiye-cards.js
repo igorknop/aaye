@@ -17,81 +17,77 @@ const VALUES = {
     'join': 1,//join
     'merge': -0.5,//join
     'seedagain': 2,//seed again
-    'moveseed': 0.5,//move seed
+    'moveseeds': 0.5,//move seed
     'tier': (0.10*0+0.30*5+0.30*8+0.30*11)*2,
 };
 
+const c01 = {name: "#01", mask: 13, type: "neutral", costType:0, cost: 0, effect: ['seedlight'], pv: 1, extra: ["initial"], qty: 3, fluffy: "Uma trabalhadora comum, faz do seu trabalho diário seu sustento." };
+const c02 = {name: "#02", mask: 10, type: "neutral", costType:0, cost: 0, effect: ['seeddark'], pv: 1, extra: ["initial"], qty: 3, fluffy: "Um trabalhador comum, faz do seu trabalho diário seu sustento." };
+
 export const CARDS = [
-    {name: "#01", mask: 13, type: "neutral", costType:0, cost: 0, effect: ['seedlight'], pv: 1, extra: ["initial"], qty: 3 },
-    {name: "#02", mask: 10, type: "neutral", costType:0, cost: 0, effect: ['seeddark'], pv: 1, extra: ["initial"], qty: 3 },
-    //{name: "#00", mask: 14, type: "neutral", costType:0, cost: 0, effect: ['seedlight', 'seeddark'], pv: 0, extra: ["initial"], qty: 1 },
+    {...c01},
+    {...c02},
+    {...c01},
+    {...c02},
+    {...c01},
+    {...c02},
+    {...c01},
+    {...c02},
     
-    {name: "#01", mask: 13, type: "neutral", costType:0, cost: 0, effect: ['seedlight'], pv: 1, extra: ["initial"], qty: 3 },
-    {name: "#02", mask: 10, type: "neutral", costType:0, cost: 0, effect: ['seeddark'], pv: 1, extra: ["initial"], qty: 3 },
-    //{name: "#00", mask: 14, type: "neutral", costType:0, cost: 0, effect: ['seedlight', 'seeddark'], pv: 0, extra: ["initial"], qty: 1 },
+    {name: "#03a", mask: 15, type: "sun", costType:2, cost: 3, effect: ['attack', 'seeddark'], pv: 2, extra: [], qty: 3, fluffy: "Um guerreiro das ruas. Realiza o trabalho que tem que ser feito."},
+    {name: "#03b", mask: 15, type: "moon", costType:1, cost: 3, effect: ['attack', 'seedlight'], pv: 2, extra: [], qty: 3, fluffy: "Um guerreiro das ruas. Realiza o trabalho que tem que ser feito."},
     
-    {name: "#01", mask: 13, type: "neutral", costType:0, cost: 0, effect: ['seedlight'], pv: 1, extra: ["initial"], qty: 3 },
-    {name: "#02", mask: 10, type: "neutral", costType:0, cost: 0, effect: ['seeddark'], pv: 1, extra: ["initial"], qty: 3 },
-    //{name: "#00", mask: 14, type: "neutral", costType:0, cost: 0, effect: ['seedlight', 'seeddark'], pv: 0, extra: ["initial"], qty: 1 },
+    {name: "#04a", mask: 14, type: "neutral", costType:0, cost: 3, effect: ['xseeddark', "to", 'seedlight', 'seedlight', 'seedlight'], pv: 2, extra: [], qty: 3 , fluffy:"Um negociante de ações que busca ganhos rápidos."},
+    {name: "#04b", mask: 14, type: "neutral", costType:0, cost: 3, effect: ['xseedlight', "to", 'seeddark', 'seeddark', 'seeddark'], pv: 2, extra: [], qty: 3 , fluffy:"Um negociante de ações que busca ganhos rápidos."},
+    {name: "#04c", mask: 14, type: "moon", costType:1, cost: 1, effect: ['xbuy', "to", 'seedjoker', 'seedjoker', 'seedjoker'], pv: 2, extra: [], qty: 3 , fluffy:"Um negociante de ações que busca ganhos rápidos."},
+    {name: "#04d", mask: 14, type: "sun", costType:2, cost: 1, effect: ['xbuy', "to", 'seedjoker', 'seedjoker', 'seedjoker'], pv: 2, extra: [], qty: 3 , fluffy:"Um negociante de ações que busca ganhos rápidos."},
     
-    //{name: "#00", mask: 6, type: "neutral", costType:0, cost: 5, effect: ["merge"], pv: "0", extra: [, "p5", "per", "gpile"], qty: 1 , value: VALUES.tier},
-    {name: "#01", mask: 13, type: "neutral", costType:0, cost: 0, effect: ['seedlight'], pv: 1, extra: ["initial"], qty: 3 },
-    {name: "#02", mask: 10, type: "neutral", costType:0, cost: 0, effect: ['seeddark'], pv: 1, extra: ["initial"], qty: 3 },
-    //{name: "#00", mask: 14, type: "neutral", costType:0, cost: 0, effect: ['seedlight', 'seeddark'], pv: 0, extra: ["initial"], qty: 1 },
+    {name: "#05a", mask: 18, type: "neutral", costType:0, cost: 3, effect: ['seedagain', "split"], pv: 2, extra: [], qty: 6 },
+    {name: "#05b", mask: 19, type: "neutral", costType:0, cost: 2, effect: ['seedagain'], pv: 2, extra: [], qty: 3, fluffy: "Uma jovem política de destaque e em ascenção."},
+    {name: "#05c", mask: 19, type: "neutral", costType:0, cost: 2, effect: ['seedagain'], pv: 2, extra: [], qty: 3, fluffy: "Uma jovem política de destaque e em ascenção."},
     
-    {name: "#03a", mask: 15, type: "sun", costType:2, cost: 3, effect: ['attack', 'seeddark'], pv: 2, extra: [], qty: 3 },
-    {name: "#03b", mask: 15, type: "moon", costType:1, cost: 3, effect: ['attack', 'seedlight'], pv: 2, extra: [], qty: 3 },
-    
-    {name: "#04a", mask: 14, type: "neutral", costType:0, cost: 3, effect: ['xseeddark', "to", 'seedlight', 'seedlight', 'seedlight'], pv: 2, extra: [], qty: 3 },
-    {name: "#04b", mask: 14, type: "neutral", costType:0, cost: 3, effect: ['xseedlight', "to", 'seeddark', 'seeddark', 'seeddark'], pv: 2, extra: [], qty: 3 },
-    
-    {name: "#05a", mask: 18, type: "neutral", costType:0, cost: 3, effect: ['seedagain', "split"], pv: 2, extra: [], qty: 4 },
-    {name: "#05b", mask: 19, type: "neutral", costType:0, cost: 2, effect: ['seedagain'], pv: 2, extra: [], qty: 2 },
-    {name: "#05c", mask: 19, type: "neutral", costType:0, cost: 2, effect: ['seedagain'], pv: 2, extra: [], qty: 2 },
-    
-    {name: "#06", mask: 17, type: "neutral", costType:0, cost: 3, effect: ['defense', "merge"], pv: 2, extra: [], qty: 4 },
-    {name: "#06a", mask: 12, type: "moon", costType:1, cost: 1, effect: ['seedlight', 'moveseed'], pv: 2, extra: [], qty: 2 },
-    {name: "#06b", mask: 12, type: "sun", costType:2, cost: 1, effect: ['seeddark', 'moveseed'], pv: 2, extra: [], qty: 2 },
+    {name: "#06", mask: 17, type: "neutral", costType:0, cost: 3, effect: ['defense', "merge"], pv: 2, extra: [], qty: 6 },
+    {name: "#06a", mask: 12, type: "moon", costType:1, cost: 1, effect: ['seedlight', 'moveseeds'], pv: 2, extra: [], qty: 3, fluffy: "Uma jovem política de destaque e em ascenção."},
+    {name: "#06b", mask: 12, type: "sun", costType:2, cost: 1, effect: ['seeddark', 'moveseeds'], pv: 2, extra: [], qty: 3, fluffy: "Uma jovem política de destaque e em ascenção."},
     
     
     
-    {name: "#07a", mask: 16, type: "moon", costType:1, cost: 1, effect: ['defense','seeddark', 'merge'], pv: 3, extra: [], qty: 3 },
-    {name: "#07b", mask: 16, type: "sun", costType:2, cost: 1, effect: ['defense','seedlight', 'merge'], pv: 3, extra: [], qty: 3 },
+    {name: "#07a", mask: 16, type: "moon", costType:1, cost: 1, effect: ['defense','seeddark', 'merge'], pv: 3, extra: [], qty: 3, fluffy:"Um policial prestes a se aposentar, que proteje a sua comunidade." },
+    {name: "#07b", mask: 16, type: "sun", costType:2, cost: 1, effect: ['defense','seedlight', 'merge'], pv: 3, extra: [], qty: 3, fluffy:"Um policial prestes a se aposentar, que proteje a sua comunidade." },
     
-    {name: "#08a", mask: 11, type: "moon", costType:1, cost: 1, effect: ['seedlight', 'seeddark', 'buy'], pv: 2, extra: [], qty: 3 },
-    {name: "#08b", mask: 11, type: "sun", costType:2, cost: 1, effect: ['seedlight', 'seeddark', 'buy'], pv: 2, extra: [], qty: 3 },
+    {name: "#08a", mask: 11, type: "moon", costType:1, cost: 1, effect: ['seedlight', 'seeddark', 'buy'], pv: 2, extra: [], qty: 3, fluffy:"Uma CEO de uma multinacional em expansão." },
+    {name: "#08b", mask: 11, type: "sun", costType:2, cost: 1, effect: ['seedlight', 'seeddark', 'buy'], pv: 2, extra: [], qty: 3, fluffy:"Uma CEO de uma multinacional em expansão." },
     
     
-    
-    /**/
-    //{name: "#00", mask: 4, type: "neutral", costType:0, cost: 5, effect: ['defense', 'seeddark'], pv: "0", extra: ["p5", "p8", "p11", "per", 'seedlight', 'seeddark'], qty: 1 , value: VALUES.tier},
-    //{name: "#00", mask: 4, type: "neutral", costType:0, cost: 5, effect: ['seedlight', 'seedlight'], pv: "0", extra: ["p5", "p8", "p11", "per", 'seedlight', 'seedlight'], qty: 1, value: VALUES.tier },
-    //{name: "#00", mask: 4, type: "neutral", costType:0, cost: 5, effect: ['seeddark', 'seeddark'], pv: "0", extra: [, "p5", "p8", "p11", "per", 'seeddark','seeddark'], qty: 1 , value: VALUES.tier},
-    //{name: "#00", mask: 2, type: "sun", costType:0, cost: 3, effect: ['seedagain', "split"], pv: 2, extra: [], qty: 1 },
-    //{name: "#00", mask: 1, type: "moon", costType:0, cost: 1, effect: ['attack', 'merge'], pv: 2, extra: [], qty: 1 },
-    //{name: "#00", mask: 2, type: "sun", costType:0, cost: 3, effect: ['seedagain', 'buy'], pv: 2, extra: [], qty: 1 },
-    //{name: "#00", mask: 4, type: "neutral", costType:0, cost: 5, effect: ['defense', 'merge'], pv: "0", extra: [ "p5","p8","p11","per", "pair"], qty: 1 },
-    {name: "#04c", mask: 14, type: "moon", costType:1, cost: 1, effect: ['xbuy', "to", 'seedjoker', 'seedjoker', 'seedjoker'], pv: 2, extra: [], qty: 2 },
-    {name: "#04d", mask: 14, type: "sun", costType:2, cost: 1, effect: ['xbuy', "to", 'seedjoker', 'seedjoker', 'seedjoker'], pv: 2, extra: [], qty: 2 },
-    
-    {name: "e01", mask: 1, type: "neutral", costType:0, cost: 5, effect: ['seedlight', 'seedlight'], pv: "0", extra: ["p5", "p8", "p11", "per", 'seedlight', 'seedlight'], qty: 1 , value: VALUES.tier},
-    {name: "e02", mask: 2, type: "neutral", costType:0, cost: 5, effect: ['seeddark', 'seeddark'], pv: "0", extra: ["p5", "p8", "p11", "per", 'seeddark', 'seeddark'], qty: 1 , value: VALUES.tier},
-    {name: "e03", mask: 4, type: "neutral", costType:0, cost: 5, effect: ['seedlight', 'seeddark'], pv: "0", extra: [, "p5", "p8", "p11", "per", 'seedlight', 'seeddark'], qty: 1 , value: VALUES.tier},
-    {name: "e04", mask: 5, type: "neutral", costType:0, cost: 5, effect: ['attack', 'defense'], pv: "0", extra: ["p5", "p8", "p11", "per", 'attack', 'attack'], qty: 1 , value: VALUES.tier},
-    {name: "e05", mask: 4, type: "neutral", costType:0, cost: 5, effect: ['xseedjoker', "to", 'seedlight', 'seedlight', 'seedlight'], pv: 11, extra: [, "pn1", "per", 'seedjoker'], qty: 1 , value: -VALUES.tier},
-    {name: "e06", mask: 3, type: "neutral", costType:0, cost: 5, effect: ['seeddark', 'merge'], pv: "0", extra: [ "p5","p8","p11", "per", "pair"], qty: 1 , value: VALUES.tier},
-    {name: "e07", mask: 6, type: "neutral", costType:0, cost: 5, effect: ['seedlight', 'moveseed'], pv: "0", extra: ["p3", "per", "pile3"], qty: 1 , value: VALUES.tier},
-    {name: "e08", mask: 6, type: "neutral", costType:0, cost: 5, effect: ['seedlight', 'defense'], pv: "0", extra: ["p4", "per", "pile4"], qty: 1 , value: VALUES.tier},
-    {name: "e09", mask: 3, type: "neutral", costType:0, cost: 5, effect: ['seedjoker', 'buy'], pv: "0", extra: ["p5", "p8", "p11", "per", "sun", "sun"], qty: 1 , value: VALUES.tier},
-    {name: "e10", mask: 3, type: "neutral", costType:0, cost: 5, effect: ['seedjoker', 'buy'], pv: "0", extra: ["p5", "p8", "p11", "per", "moon", "moon"], qty: 1 },
-    {name: "e11", mask: 5, type: "neutral", costType:0, cost: 5, effect: ['attack', 'defense'], pv: "0", extra: ["p5", "p8", "p11", "per", 'defense', 'defense'], qty: 1 , value: VALUES.tier},
-    {name: "e12", mask: 5, type: "neutral", costType:0, cost: 5, effect: ['attack', 'defense'], pv: "0", extra: ["p5", "p8", "p11", "per", 'attack', 'attack'], qty: 1 , value: VALUES.tier},
-    {name: "e13", mask: 6, type: "neutral", costType:0, cost: 5, effect: ['seeddark', "split"], pv: "0", extra: [, "p2", "per", "spile"], qty: 1 },
-    {name: "e09", mask: 3, type: "neutral", costType:0, cost: 5, effect: ['seedjoker', 'buy'], pv: "0", extra: ["p5", "p8", "p11", "per", "sun", "sun"], qty: 1 , value: VALUES.tier},
-    {name: "e10", mask: 3, type: "neutral", costType:0, cost: 5, effect: ['seedjoker', 'buy'], pv: "0", extra: ["p5", "p8", "p11", "per", "moon", "moon"], qty: 1 },
-    {name: "e11", mask: 5, type: "neutral", costType:0, cost: 5, effect: ['attack', 'defense'], pv: "0", extra: ["p5", "p8", "p11", "per", 'attack', 'defense'], qty: 1 },
+    {name: "e01", mask: 1, type: "neutral", costType:0, cost: 5, effect: ['seedlight', 'seedlight'], pv: "0", extra: ["p5", "p8", "p11", "per", 'seedlight', 'seedlight'], qty: 2 , value: VALUES.tier},
+    {name: "e02", mask: 2, type: "neutral", costType:0, cost: 5, effect: ['seeddark', 'seeddark'], pv: "0", extra: ["p5", "p8", "p11", "per", 'seeddark', 'seeddark'], qty: 2 , value: VALUES.tier},
+    {name: "e03", mask: 4, type: "neutral", costType:0, cost: 5, effect: ['seedlight', 'seeddark'], pv: "0", extra: [, "p5", "p8", "p11", "per", 'seedlight', 'seeddark'], qty: 2 , value: VALUES.tier},
+    {name: "e04", mask: 4, type: "neutral", costType:0, cost: 5, effect: ['xseedjoker', "to", 'seedlight', 'seedlight', 'seedlight'], pv: 11, extra: [, "pn1", "per", 'seedjoker'], qty: 2 , value: -VALUES.tier},
+    {name: "e05", mask: 5, type: "neutral", costType:0, cost: 5, effect: ['attack', 'defense'], pv: "0", extra: ["p5", "p8", "p11", "per", 'attack', 'attack'], qty: 2 , value: VALUES.tier},
+    {name: "e06", mask: 5, type: "neutral", costType:0, cost: 5, effect: ['attack', 'defense'], pv: "0", extra: ["p5", "p8", "p11", "per", 'defense', 'defense'], qty: 2 , value: VALUES.tier},
+    {name: "e07", mask: 5, type: "neutral", costType:0, cost: 5, effect: ['attack', 'defense'], pv: "0", extra: ["p5", "p8", "p11", "per", 'attack', 'defense'], qty: 2 },
+    {name: "e08", mask: 6, type: "neutral", costType:0, cost: 5, effect: ['seeddark', "split"], pv: "0", extra: [, "p2", "per", "spile"], qty: 2 },
+    {name: "e09", mask: 6, type: "neutral", costType:0, cost: 5, effect: ['seedlight', 'moveseeds'], pv: "0", extra: ["p3", "per", "pile3"], qty: 2 , value: VALUES.tier},
+    {name: "e10", mask: 6, type: "neutral", costType:0, cost: 5, effect: ['seedlight', 'defense'], pv: "0", extra: ["p4", "per", "pile4"], qty: 2 , value: VALUES.tier},
+    {name: "e11", mask: 3, type: "neutral", costType:0, cost: 5, effect: ['seedjoker', 'buy'], pv: "0", extra: ["p5", "p8", "p11", "per", "sun", "sun"], qty: 2 , value: VALUES.tier},
+    {name: "e12", mask: 3, type: "neutral", costType:0, cost: 5, effect: ['seedjoker', 'buy'], pv: "0", extra: ["p5", "p8", "p11", "per", "moon", "moon"], qty: 2 },
+    {name: "e13", mask: 3, type: "neutral", costType:0, cost: 5, effect: ['seeddark', 'merge'], pv: "0", extra: [ "p5","p8","p11", "per", "pair"], qty: 2, value: VALUES.tier},
     
 ];
+
+
+//{name: "#00", mask: 14, type: "neutral", costType:0, cost: 0, effect: ['seedlight', 'seeddark'], pv: 0, extra: ["initial"], qty: 1 },
+//{name: "#00", mask: 14, type: "neutral", costType:0, cost: 0, effect: ['seedlight', 'seeddark'], pv: 0, extra: ["initial"], qty: 1 },
+//{name: "#00", mask: 14, type: "neutral", costType:0, cost: 0, effect: ['seedlight', 'seeddark'], pv: 0, extra: ["initial"], qty: 1 },
+//{name: "#00", mask: 6, type: "neutral", costType:0, cost: 5, effect: ["merge"], pv: "0", extra: [, "p5", "per", "gpile"], qty: 1 , value: VALUES.tier},
+//{name: "#00", mask: 14, type: "neutral", costType:0, cost: 0, effect: ['seedlight', 'seeddark'], pv: 0, extra: ["initial"], qty: 1 },
+//{name: "#00", mask: 4, type: "neutral", costType:0, cost: 5, effect: ['defense', 'seeddark'], pv: "0", extra: ["p5", "p8", "p11", "per", 'seedlight', 'seeddark'], qty: 1 , value: VALUES.tier},
+//{name: "#00", mask: 4, type: "neutral", costType:0, cost: 5, effect: ['seedlight', 'seedlight'], pv: "0", extra: ["p5", "p8", "p11", "per", 'seedlight', 'seedlight'], qty: 1, value: VALUES.tier },
+//{name: "#00", mask: 4, type: "neutral", costType:0, cost: 5, effect: ['seeddark', 'seeddark'], pv: "0", extra: [, "p5", "p8", "p11", "per", 'seeddark','seeddark'], qty: 1 , value: VALUES.tier},
+//{name: "#00", mask: 2, type: "sun", costType:0, cost: 3, effect: ['seedagain', "split"], pv: 2, extra: [], qty: 1 },
+//{name: "#00", mask: 1, type: "moon", costType:0, cost: 1, effect: ['attack', 'merge'], pv: 2, extra: [], qty: 1 },
+//{name: "#00", mask: 2, type: "sun", costType:0, cost: 3, effect: ['seedagain', 'buy'], pv: 2, extra: [], qty: 1 },
+//{name: "#00", mask: 4, type: "neutral", costType:0, cost: 5, effect: ['defense', 'merge'], pv: "0", extra: [ "p5","p8","p11","per", "pair"], qty: 1 },
 export const CARDSO = [
     {name: "#00", mask: 4, type: "moon", cost: 5, effect: ['merge'], pv: "0", extra: ["p1", "per", "equi"], qty: 1 },
     {name: "#00", mask: 1, type: "moon", cost: 3, effect: ['seedlight', 'seedlight'], pv: 4, extra: [], qty: 1 },
