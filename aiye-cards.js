@@ -46,17 +46,17 @@ export const CARDS = [
     {name: "#05b", mask: 19, type: "neutral", costType:0, cost: 2, effect: ['seedagain'], pv: 2, extra: [], qty: 3, fluffy: "Uma jovem política de destaque e em ascenção."},
     {name: "#05c", mask: 19, type: "neutral", costType:0, cost: 2, effect: ['seedagain'], pv: 2, extra: [], qty: 3, fluffy: "Uma jovem política de destaque e em ascenção."},
     
-    {name: "#06", mask: 17, type: "neutral", costType:0, cost: 3, effect: ['defense', "merge"], pv: 2, extra: [], qty: 6 },
-    {name: "#06a", mask: 12, type: "moon", costType:1, cost: 1, effect: ['seedlight', 'moveseeds'], pv: 2, extra: [], qty: 3, fluffy: "Uma jovem política de destaque e em ascenção."},
-    {name: "#06b", mask: 12, type: "sun", costType:2, cost: 1, effect: ['seeddark', 'moveseeds'], pv: 2, extra: [], qty: 3, fluffy: "Uma jovem política de destaque e em ascenção."},
+    {name: "#06", mask: 17, type: "neutral", costType:0, cost: 2, effect: ['defense', "merge"], pv: 2, extra: [], qty: 6 },
+    {name: "#06a", mask: 12, type: "moon", costType:1, cost: 2, effect: ['seedlight', 'moveseeds'], pv: 2, extra: [], qty: 3, fluffy: "Uma jovem política de destaque e em ascenção."},
+    {name: "#06b", mask: 12, type: "sun", costType:2, cost: 2, effect: ['seeddark', 'moveseeds'], pv: 2, extra: [], qty: 3, fluffy: "Uma jovem política de destaque e em ascenção."},
     
     
     
-    {name: "#07a", mask: 16, type: "moon", costType:1, cost: 1, effect: ['defense','seeddark', 'merge'], pv: 3, extra: [], qty: 3, fluffy:"Um policial prestes a se aposentar, que proteje a sua comunidade." },
-    {name: "#07b", mask: 16, type: "sun", costType:2, cost: 1, effect: ['defense','seedlight', 'merge'], pv: 3, extra: [], qty: 3, fluffy:"Um policial prestes a se aposentar, que proteje a sua comunidade." },
+    {name: "#07a", mask: 16, type: "moon", costType:1, cost: 3, effect: ['defense','seeddark', 'merge'], pv: 3, extra: [], qty: 3, fluffy:"Um policial prestes a se aposentar, que proteje a sua comunidade." },
+    {name: "#07b", mask: 16, type: "sun", costType:2, cost: 3, effect: ['defense','seedlight', 'merge'], pv: 3, extra: [], qty: 3, fluffy:"Um policial prestes a se aposentar, que proteje a sua comunidade." },
     
-    {name: "#08a", mask: 11, type: "moon", costType:1, cost: 1, effect: ['seedlight', 'seeddark', 'buy'], pv: 2, extra: [], qty: 3, fluffy:"Uma CEO de uma multinacional em expansão." },
-    {name: "#08b", mask: 11, type: "sun", costType:2, cost: 1, effect: ['seedlight', 'seeddark', 'buy'], pv: 2, extra: [], qty: 3, fluffy:"Uma CEO de uma multinacional em expansão." },
+    {name: "#08a", mask: 11, type: "moon", costType:1, cost: 3, effect: ['seedlight', 'seeddark', 'buy'], pv: 2, extra: [], qty: 3, fluffy:"Uma CEO de uma multinacional em expansão." },
+    {name: "#08b", mask: 11, type: "sun", costType:2, cost: 3, effect: ['seedlight', 'seeddark', 'buy'], pv: 2, extra: [], qty: 3, fluffy:"Uma CEO de uma multinacional em expansão." },
     
     
     {name: "e01", mask: 1, type: "neutral", costType:0, cost: 5, effect: ['seedlight', 'seedlight'], pv: "0", extra: ["p5", "p8", "p11", "per", 'seedlight', 'seedlight'], qty: 2 , value: VALUES.tier},
