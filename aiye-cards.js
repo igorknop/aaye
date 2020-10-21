@@ -18,6 +18,7 @@ const VALUES = {
     'merge': -0.5,//join
     'seedagain': 2,//seed again
     'moveseeds': 0.5,//move seed
+    'movecards': -1,//move cards
     'tier': (0.10*0+0.30*5+0.30*8+0.30*11)*2,
 };
 
@@ -52,8 +53,8 @@ export const CARDS = [
     
     
     
-    {name: "#07a", mask: 16, type: "moon", costType:1, cost: 3, effect: ['defense','seeddark', 'merge'], pv: 3, extra: [], qty: 3, fluffy:"Um policial prestes a se aposentar, que proteje a sua comunidade." },
-    {name: "#07b", mask: 16, type: "sun", costType:2, cost: 3, effect: ['defense','seedlight', 'merge'], pv: 3, extra: [], qty: 3, fluffy:"Um policial prestes a se aposentar, que proteje a sua comunidade." },
+    {name: "#07a", mask: 16, type: "moon", costType:1, cost: 2, effect: ['defense','seeddark', 'movecards'], pv: 3, extra: [], qty: 3, fluffy:"Um policial prestes a se aposentar, que proteje a sua comunidade." },
+    {name: "#07b", mask: 16, type: "sun", costType:2, cost: 2, effect: ['defense','seedlight', 'movecards'], pv: 3, extra: [], qty: 3, fluffy:"Um policial prestes a se aposentar, que proteje a sua comunidade." },
     
     {name: "#08a", mask: 11, type: "moon", costType:1, cost: 3, effect: ['seedlight', 'seeddark', 'buy'], pv: 2, extra: [], qty: 3, fluffy:"Uma CEO de uma multinacional em expansão." },
     {name: "#08b", mask: 11, type: "sun", costType:2, cost: 3, effect: ['seedlight', 'seeddark', 'buy'], pv: 2, extra: [], qty: 3, fluffy:"Uma CEO de uma multinacional em expansão." },
